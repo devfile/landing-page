@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@util/*": ["util/*"]
+    },
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "noImplicitAny": true,
+    "typeRoots": ["@types", "node_modules/@types"],
+    "types": ["node", "cypress"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**.*.js",
+    "**.*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.json"
+  ],
+  "exclude": [
+    ".next",
+    ".nyc_output",
+    "coverage",
+    "docs",
+    "node_modules",
+    "out"
+  ],
+  "typedocOptions": {
+    "entryPoints": ["pages", "components", "@types", "util"],
+    "out": "docs"
+  }
+}

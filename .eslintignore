@@ -1,0 +1,7 @@
+.next
+.nyc_output
+coverage
+docs
+node_modules
+out
+tests/plugins/index.js

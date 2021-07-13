@@ -1,0 +1,9 @@
+.next
+.nyc_output
+coverage
+docs
+node_modules
+out
+
+/public/*.js
+/public/*.js.map
