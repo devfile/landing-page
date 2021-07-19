@@ -29,7 +29,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: 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
           REPOSITORY_NAME: braden-wilson/braden-wilson.github.io
           BRANCH: master # The branch the action should deploy to.
           FOLDER: out # The folder the action should deploy.
