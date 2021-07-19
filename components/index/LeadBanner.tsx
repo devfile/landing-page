@@ -15,9 +15,8 @@ const LeadBanner = (
         <Divider component="li" />
         <br />
         <li>
-          A standard to simplify and accelerate cloud-native development through
-          best practice workflows.
-          {/* Accelerate developer workflows and enforce consistent standards. */}
+          An open standard to simplify and accelerate developer workflows and enable consistent
+          development environments across projects and teams.
         </li>
       </ul>
     </GridItem>
