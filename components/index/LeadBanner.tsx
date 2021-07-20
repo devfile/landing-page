@@ -6,7 +6,7 @@ const LeadBanner = (
   <Grid hasGutter>
     <GridItem span={2}></GridItem>
     <GridItem span={2}>
-      <Brand src={devfileLogo} alt="Devfile Logo" style={{ height: '13rem' }} />
+      <Brand src={devfileLogo} alt="Devfile Logo" style={{ height: '15rem' }} />
     </GridItem>
     <GridItem span={5}>
       <ul>
