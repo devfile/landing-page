@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
+    "export": "next export",
     "start": "next start",
     "start-build": "yarn build & yarn start",
     "clean": "rm -rf .next/ out/ node_modules/",
