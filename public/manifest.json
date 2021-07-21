@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Registry Viewer",
-  "short_name": "Registry Viewer",
+  "name": "Landing Page",
+  "short_name": "Landing Page",
   "icons": [
     {
       "src": "images/icons/pwa-192x192.png",
