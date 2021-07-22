@@ -25,7 +25,7 @@ const KeyFeatures = (
             <CardHeaderMain>
               <Brand
                 src={communityIcon}
-                alt="Some Picture"
+                alt="Community icon"
                 style={{ height: '5rem' }}
               />
             </CardHeaderMain>
@@ -48,7 +48,7 @@ const KeyFeatures = (
             <CardHeaderMain>
               <Brand
                 src={enterpriseIcon}
-                alt="Some Picture"
+                alt="Enterprise icon"
                 style={{ height: '5rem', marginLeft: '40%' }}
               />
             </CardHeaderMain>
@@ -70,7 +70,7 @@ const KeyFeatures = (
             <CardHeaderMain>
               <Brand
                 src={cogIcon}
-                alt="Some Picture"
+                alt="Filler cogs icon"
                 style={{ height: '5rem', marginLeft: '40%' }}
               />
             </CardHeaderMain>
