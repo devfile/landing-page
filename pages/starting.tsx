@@ -5,12 +5,12 @@ import { Page, PageSidebar } from '@patternfly/react-core';
 import NavExpandableList from '@components/starting/SideNavigation';
 
 /**
- * Renders the {@link HomePage}
+ * Renders the {@link StartingPage}
  */
-const HomePage: React.FC<InferGetStaticPropsType<GetStaticProps>> = () => (
+const StartingPage: React.FC<InferGetStaticPropsType<GetStaticProps>> = () => (
   <div>
     <Page sidebar={<PageSidebar nav={<NavExpandableList />} />}></Page>
   </div>
 );
 
-export default HomePage;
+export default StartingPage;

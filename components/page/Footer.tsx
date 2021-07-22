@@ -22,7 +22,7 @@ const Footer = () => (
               style={{ height: '4rem' }}
             />
           </FlexItem>
-          <FlexItem style={{ fontSize: '2rem' }}>devfiles</FlexItem>
+          <FlexItem style={{ fontSize: '2rem' }}>Devfiles</FlexItem>
         </Flex>
       </GridItem>
       <GridItem span={2}>

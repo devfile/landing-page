@@ -10,7 +10,7 @@ const LeadBanner = (
     </GridItem>
     <GridItem span={5}>
       <ul>
-        <li style={{ fontSize: '3rem' }}>devfiles</li>
+        <li style={{ fontSize: '3rem' }}>Devfiles</li>
         <br />
         <Divider component="li" />
         <br />
