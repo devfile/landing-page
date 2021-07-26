@@ -24,12 +24,12 @@ jobs:
       - run: npm install
       - run: npm run build
         env:
-            CI: true
+          CI: true
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.DOCS_DEPLOY_TOKEN }}
-          REPOSITORY_NAME: braden-wilson/braden-wilson.github.io
-          BRANCH: master # The branch the action should deploy to.
+          BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: out # The folder the action should deploy.
+          CLEAN: true
