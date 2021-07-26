@@ -17,5 +17,5 @@ module.exports = withPlugins([withTM, withImages, withPWA], {
     register: true,
     dest: 'public',
   },
-  assetPrefix: isProd ? '/your-github-repo-name/' : ''
+  assetPrefix: isProd ? '/landing-page/' : ''
 });
