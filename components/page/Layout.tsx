@@ -35,9 +35,9 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
     <Nav variant="horizontal">
       <NavList>
         <NavItem>
-          <Link href="/starting">
-            <a>Getting Started</a>
-          </Link>
+          {/* <Link href="/starting"> */}
+          <a href="/landing-page/starting">Getting Started</a>
+          {/* </Link> */}
         </NavItem>
         <NavItem>
           <a target="_blank" rel="noreferrer" href="https://docs.devfile.io">
