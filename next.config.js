@@ -17,5 +17,6 @@ module.exports = withPlugins([withTM, withImages, withPWA], {
     register: true,
     dest: 'public',
   },
-  assetPrefix: isProd ? '/landing-page/' : ''
+  assetPrefix: isProd ? '/landing-page/' : '',
+  basePath: isProd ? '/landing-page' : '',
 });
