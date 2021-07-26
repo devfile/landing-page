@@ -5,6 +5,7 @@ const withTM = require('next-transpile-modules')([
   '@patternfly/react-core',
   '@patternfly/react-styles',
 ]);
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = withPlugins([withTM, withImages, withPWA], {
   images: {
@@ -16,4 +17,5 @@ module.exports = withPlugins([withTM, withImages, withPWA], {
     register: true,
     dest: 'public',
   },
+  assetPrefix: isProd ? '/your-github-repo-name/' : ''
 });
