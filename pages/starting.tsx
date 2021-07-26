@@ -1,15 +1,13 @@
 import { InferGetStaticPropsType, GetStaticProps } from 'next';
 
-import { Page, PageSidebar } from '@patternfly/react-core';
-
-import NavExpandableList from '@components/starting/SideNavigation';
+import GettingStarted from '@components/starting/GettingStarted';
 
 /**
  * Renders the {@link StartingPage}
  */
 const StartingPage: React.FC<InferGetStaticPropsType<GetStaticProps>> = () => (
   <div>
-    <Page sidebar={<PageSidebar nav={<NavExpandableList />} />}></Page>
+    <GettingStarted />
   </div>
 );
 
