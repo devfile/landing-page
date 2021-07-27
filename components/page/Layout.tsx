@@ -36,7 +36,9 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
       <NavList>
         <NavItem>
           {/* <Link href="/starting"> */}
-          <a href="/landing-page/starting">Getting Started</a>
+          <a data-cy="getting-started-button" href="/landing-page/starting">
+            Getting Started
+          </a>
           {/* </Link> */}
         </NavItem>
         <NavItem>
@@ -57,7 +59,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
     <PageHeader
       logo={
         <Link href="/">
-          <a data-test-id="go-home-button">
+          <a data-cy="go-home-button">
             <Brand
               src={devfileLogo}
               alt="Devfile Logo"
