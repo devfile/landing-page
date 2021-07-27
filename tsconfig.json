@@ -29,8 +29,8 @@
     "**.*.jsx",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.json"
-, "tests/integration/home_page_spec.js"  ],
+    "**/*.json",
+    "tests/integration/home_page_spec.js"  ],
   "exclude": [
     ".next",
     ".nyc_output",
