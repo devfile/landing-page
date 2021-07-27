@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.json"
-  ],
+, "tests/integration/home_page_spec.js"  ],
   "exclude": [
     ".next",
     ".nyc_output",
