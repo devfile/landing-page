@@ -2,7 +2,7 @@
   "name": "devfile-landing-page",
   "author": "Braden Wilson",
   "version": "1.0.0",
-  "homepage": "https://braden-wilson.github.io",
+  "homepage": "https://braden-wilson.github.io/landing-page",
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
