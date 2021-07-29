@@ -1,6 +1,6 @@
 # landing-page
 
-Landing Page repository for devfile.io
+Landing Page repository for devfile.io.
 
 ## Getting Started
 
@@ -18,4 +18,4 @@ This repo is hosted on github pages at https://braden-wilson.github.io/landing-p
 
 The Github Pages site is hosted from the gh-pages branch of this repository, which the main branch deploys to every time a change is pushed.
 
-Because of the _/landing-page_ extension on the Github Pages site, when viewing the site locally you will have to add this extension, for example [localhost:3000/landing-page].
+Because of the _/landing-page_ extension on the Github Pages site, when viewing the site locally you will have to add this extension, for example [localhost:3000/landing-page](localhost:3000/landing-page).
