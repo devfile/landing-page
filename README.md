@@ -14,7 +14,7 @@ Start a production server with `yarn start` or `npm run start`.
 
 ## Github Pages
 
-This repo is hosted on github pages at https://braden-wilson.github.io/landing-page.
+This repo is hosted on github pages at https://devfile.github.io/landing-page.
 
 The Github Pages site is hosted from the gh-pages branch of this repository, which the main branch deploys to every time a change is pushed.
 
