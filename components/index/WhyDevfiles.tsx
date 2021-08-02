@@ -1,4 +1,4 @@
-import { Stack, StackItem, Grid, GridItem } from '@patternfly/react-core';
+import { Grid, GridItem } from '@patternfly/react-core';
 
 const WhyDevfiles = (
   <Grid>
