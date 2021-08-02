@@ -85,7 +85,16 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   );
 
   return (
-    <Page header={Header}>
+    <Page
+      header={Header}
+      style={{
+        // display: 'flex',
+        // flexDirection: 'column',
+        minHeight: '100vh',
+        margin: '0',
+        backgroundColor: 'var(--pf-global--BackgroundColor--dark-100)',
+      }}
+    >
       <Meta />
       <main>{children}</main>
       <Footer />

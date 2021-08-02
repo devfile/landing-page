@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Page, PageSidebar } from '@patternfly/react-core';
 import NavExpandableList from '@components/starting/SideNavigation';
 
-import gettingStartedPage from '@components/starting/gettingStartedPage';
+import appDevfilesPage from '@components/starting/appDevfilesPage';
 
 function GettingStarted() {
-  const [currentPage, setPage] = useState(gettingStartedPage);
+  const [currentPage, setPage] = useState(appDevfilesPage);
 
   return (
     <Page
