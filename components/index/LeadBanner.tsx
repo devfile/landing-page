@@ -15,8 +15,8 @@ const LeadBanner = (
         <Divider component="li" />
         <br />
         <li>
-          An open standard to simplify and accelerate developer workflows and
-          enable consistent development environments across projects and teams.
+          An open standard defining containerized development environments that
+          enables developer tools to simplify and accelerate workflows.
         </li>
       </ul>
     </GridItem>

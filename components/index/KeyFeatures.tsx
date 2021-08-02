@@ -9,8 +9,6 @@ import {
   CardBody,
 } from '@patternfly/react-core';
 
-import communityIcon from '../../public/images/community.png';
-import enterpriseIcon from '../../public/images/enterprise.png';
 import cogIcon from '../../public/images/cogs.png';
 
 const KeyFeatures = (
@@ -24,21 +22,19 @@ const KeyFeatures = (
           <CardHeader>
             <CardHeaderMain>
               <Brand
-                src={communityIcon}
-                alt="Community icon"
-                style={{ height: '5rem' }}
+                src={cogIcon}
+                alt="Placeholder"
+                style={{ height: '5rem', marginLeft: '40%' }}
               />
             </CardHeaderMain>
           </CardHeader>
-          <CardTitle>Community Registry</CardTitle>
+          <CardTitle>Devfile for Stacks</CardTitle>
           <CardBody>
-            We provide a{' '}
-            <span style={{ color: 'var(--pf-global--link--Color)' }}>
-              community hosted registry{' '}
-            </span>
-            where you can discover stacks and samples provided by runtime and
-            tools teams who have configured them with best practices and common
-            tools configurations.
+            The stack devfiles can be found under a devfile registry. They
+            provide generic application build and run support for applications
+            that use a specific language or framework. Each stack also provides
+            starter projects that help you to stand up a brand new application
+            quickly.
           </CardBody>
         </Card>
       </GalleryItem>
@@ -47,20 +43,18 @@ const KeyFeatures = (
           <CardHeader>
             <CardHeaderMain>
               <Brand
-                src={enterpriseIcon}
-                alt="Enterprise icon"
+                src={cogIcon}
+                alt="Placeholder"
                 style={{ height: '5rem', marginLeft: '40%' }}
               />
             </CardHeaderMain>
           </CardHeader>
-          <CardTitle>Enterprise Registry</CardTitle>
+          <CardTitle>Devfile for Projects</CardTitle>
           <CardBody>
-            If you prefer, you can also provision and manage your own{' '}
-            <span style={{ color: 'var(--pf-global--link--Color)' }}>
-              enterprise managed registry
-            </span>{' '}
-            that allows you to customize what runtimes you want to make
-            available to your teams.
+            Having the devfile included as part of your application’s source
+            code makes your development environment easily reproducible. No
+            matter where you load your application, it will get built and run in
+            the same way as specified in the devfile file.
           </CardBody>
         </Card>
       </GalleryItem>
@@ -75,14 +69,113 @@ const KeyFeatures = (
               />
             </CardHeaderMain>
           </CardHeader>
-          <CardTitle>Another Feature</CardTitle>
+          <CardTitle>Community Registry support</CardTitle>
           <CardBody>
-            Lorem ipsum dolor sit amet, consectetur{' '}
-            <span style={{ color: 'var(--pf-global--link--Color)' }}>
-              adipiscing elit
-            </span>
-            . Aenean tincidunt consequat consequat. Etiam ac mi nulla. Duis
-            tincidunt vehicula felis, eget egestas lacus tristique vitae.
+            You have access to a community hosted registry where you can
+            discover stacks and samples provided by runtime and tools teams who
+            have configured them with best practices and common tools
+            configurations.
+          </CardBody>
+        </Card>
+      </GalleryItem>
+      <GalleryItem>
+        <Card>
+          <CardHeader>
+            <CardHeaderMain>
+              <Brand
+                src={cogIcon}
+                alt="Filler cogs icon"
+                style={{ height: '5rem', marginLeft: '40%' }}
+              />
+            </CardHeaderMain>
+          </CardHeader>
+          <CardTitle>Custom in-house registry</CardTitle>
+          <CardBody>
+            If you prefer, you can also provision and manage your own enterprise
+            managed registry that allows you to customize what runtimes you want
+            to make available to your teams.
+          </CardBody>
+        </Card>
+      </GalleryItem>
+      <GalleryItem>
+        <Card>
+          <CardHeader>
+            <CardHeaderMain>
+              <Brand
+                src={cogIcon}
+                alt="Filler cogs icon"
+                style={{ height: '5rem', marginLeft: '40%' }}
+              />
+            </CardHeaderMain>
+          </CardHeader>
+          <CardTitle>Developer Environment’s Configuration as Code</CardTitle>
+          <CardBody>
+            Having the devfile included as part of your application, you can
+            check in the devfile together with your source code. It makes your
+            development environment easily reproducible. No matter where you
+            load your application, it will get built and run in the same way as
+            specified in the devfile file.
+          </CardBody>
+        </Card>
+      </GalleryItem>
+      <GalleryItem>
+        <Card>
+          <CardHeader>
+            <CardHeaderMain>
+              <Brand
+                src={cogIcon}
+                alt="Filler cogs icon"
+                style={{ height: '5rem', marginLeft: '40%' }}
+              />
+            </CardHeaderMain>
+          </CardHeader>
+          <CardTitle>Parent support</CardTitle>
+          <CardBody>
+            Using the devfile parent support, your application inherits the
+            behaviour of an existing devfile stack. When there is an update on
+            the registry stack, like security fixes and runtime updates, your
+            application automatically picks them up.
+          </CardBody>
+        </Card>
+      </GalleryItem>
+      <GalleryItem>
+        <Card>
+          <CardHeader>
+            <CardHeaderMain>
+              <Brand
+                src={cogIcon}
+                alt="Filler cogs icon"
+                style={{ height: '5rem', marginLeft: '40%' }}
+              />
+            </CardHeaderMain>
+          </CardHeader>
+          <CardTitle>Stacks/samples/starter projects</CardTitle>
+          <CardBody>
+            The devfile community registry is populated with stacks, samples,
+            and starter projects that help teams accelerate their application
+            development.
+          </CardBody>
+        </Card>
+      </GalleryItem>
+      <GalleryItem>
+        <Card>
+          <CardHeader>
+            <CardHeaderMain>
+              <Brand
+                src={cogIcon}
+                alt="Filler cogs icon"
+                style={{ height: '5rem', marginLeft: '40%' }}
+              />
+            </CardHeaderMain>
+          </CardHeader>
+          <CardTitle>Support for the full application lifecycle</CardTitle>
+          <CardBody>
+            With devfiles, you have help throughout the entire application
+            lifecycle. You start from the starter projects to start an
+            application from scratch, use inner loop support for rapid
+            application development, and the outer loop support to test out the
+            application that is built in a way that closely resembles the
+            production build and pipeline.
           </CardBody>
         </Card>
       </GalleryItem>

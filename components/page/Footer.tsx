@@ -35,15 +35,6 @@ const Footer = () => (
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://www.ibm.com/us-en/"
-            >
-              IBM
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              rel="noreferrer"
               href="https://www.redhat.com/en"
             >
               Red Hat
@@ -52,6 +43,24 @@ const Footer = () => (
           <li>
             <a target="_blank" rel="noreferrer" href="https://aws.amazon.com">
               AWS
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.jetbrains.com/"
+            >
+              JetBrains
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.ibm.com/us-en/"
+            >
+              IBM
             </a>
           </li>
         </ul>

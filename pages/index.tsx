@@ -3,6 +3,7 @@ import { Stack, StackItem } from '@patternfly/react-core';
 
 import LeadBanner from '@components/index/LeadBanner';
 import WhyDevfiles from '@components/index/WhyDevfiles';
+import ValueProps from '@components/index/ValueProps';
 import KeyFeatures from '@components/index/KeyFeatures';
 
 /**
@@ -24,12 +25,22 @@ const HomePage: React.FC<InferGetStaticPropsType<GetStaticProps>> = () => (
       <StackItem
         isFilled
         style={{
-          backgroundColor: 'var(--pf-global--BackgroundColor--100)',
+          backgroundColor: 'var(--pf-global--BackgroundColor--200)',
           color: 'var(--pf-global--Color--100)',
           padding: '3rem',
         }}
       >
         {WhyDevfiles}
+      </StackItem>
+      <StackItem
+        isFilled
+        style={{
+          backgroundColor: 'var(--pf-global--BackgroundColor--100)',
+          color: 'var(--pf-global--Color--100)',
+          padding: '3rem',
+        }}
+      >
+        {ValueProps}
       </StackItem>
       <StackItem
         style={{
