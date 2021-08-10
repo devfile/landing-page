@@ -20,15 +20,18 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.121.1",
-    "@patternfly/react-icons": "^4.10.7",
+    "@patternfly/react-core": "^4.147.0",
+    "@patternfly/react-icons": "^4.11.8",
+    "@types/marked": "^2.0.4",
+    "file-system": "^2.2.2",
     "next": "^11.0.0",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.8.1",
     "next-pwa": "^5.2.21",
     "next-transpile-modules": "^8.0.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3"
   },
   "license": "EPL-2.0",
   "devDependencies": {
@@ -42,6 +45,8 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
     "babel-jest": "^27.0.2",
     "babel-plugin-istanbul": "^6.0.0",
+    "babel-plugin-preval": "^5.0.0",
+    "babel-plugin-static-fs": "^3.0.0",
     "concurrently": "^6.2.0",
     "cypress": "^7.6.0",
     "debug": "^4.3.1",

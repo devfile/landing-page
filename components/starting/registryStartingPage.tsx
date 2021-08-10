@@ -24,7 +24,7 @@ const registryStartingPage = () => (
       <p>...</p>
       <br />
       <h2 style={{ fontSize: '1.3rem' }}>
-        <b>CRegistry index</b>
+        <b>Registry index</b>
       </h2>
       <p>...</p>
     </div>

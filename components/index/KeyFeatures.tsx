@@ -7,6 +7,8 @@ import {
   CardBody,
 } from '@patternfly/react-core';
 
+// import styles from '@components/index/KeyFeatures.module.css';
+
 import keyFeaturesList from '@components/index/keyFeaturesList';
 import cogIcon from '../../public/images/cogs.png';
 
@@ -15,7 +17,10 @@ const KeyFeatures = (
     <h1 style={{ fontSize: '2rem' }}>Key Features</h1>
     <h4 style={{ color: 'var(--pf-global--Color--200)' }}>with devfiles</h4>
     <br />
-    <div style={{ display: 'flex', overflowX: 'auto' }}>
+    <div
+      // className={styles.select}
+      style={{ display: 'flex', overflowX: 'auto' }}
+    >
       {keyFeaturesList.map((card) => (
         <Card
           key={card[0]}

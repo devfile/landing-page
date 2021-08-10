@@ -1,40 +1,33 @@
-import appDevfilesPage from '@components/starting/appDevfilesPage';
-import appStartingPage from '@components/starting/appStartingPage';
-import techDevfilesPage from '@components/starting/techDevfilesPage';
-import techStartingPage from '@components/starting/techStartingPage';
-import enterpriseDevfilesPage from '@components/starting/enterpriseDevfilesPage';
-import enterpriseStartingPage from '@components/starting/enterpriseStartingPage';
-import registryDevfilesPage from '@components/starting/registryDevfilesPage';
-import registryStartingPage from '@components/starting/registryStartingPage';
+import { PropsWithChildren } from 'react';
 
-function StartingNavList() {
+function StartingNavList(props: PropsWithChildren<{ [key: string]: any }>) {
   return [
     [
       'Application Developer',
       {
-        'Why devfiles': appDevfilesPage,
-        'Getting started': appStartingPage,
+        'Why devfiles': props.appDevfiles,
+        'Getting started': props.appStarting,
       },
     ],
     [
       'Technology and Tools Builders',
       {
-        'Why devfiles': techDevfilesPage,
-        'Getting started': techStartingPage,
+        'Why devfiles': props.techDevfiles,
+        'Getting started': props.techStarting,
       },
     ],
     [
       'Enterprise Architect and Runtime Provider',
       {
-        'Why devfiles': enterpriseDevfilesPage,
-        'Getting started': enterpriseStartingPage,
+        'Why devfiles': props.enterpriseDevfiles,
+        'Getting started': props.enterpriseStarting,
       },
     ],
     [
       'Registry Administrator',
       {
-        'Why devfiles': registryDevfilesPage,
-        'Getting started': registryStartingPage,
+        'Why devfiles': props.registryDevfiles,
+        'Getting started': props.registryStarting,
       },
     ],
   ];

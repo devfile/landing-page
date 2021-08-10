@@ -13,8 +13,8 @@ const techStartingPage = () => (
       <br />
       <h2 style={{ fontSize: '1.3rem' }}>
         <b>
-          Detailed runtime behaviour of the tools (e.g. lifecycle of containers,
-          init container behaviour)
+          Detailed runtime behavior of the tools (e.g. lifecycle of containers,
+          init container behavior)
         </b>
       </h2>
       <p>...</p>
