@@ -3,9 +3,7 @@ import { PageSection, Divider } from '@patternfly/react-core';
 const appStartingPage = () => (
   <PageSection>
     <div style={{ padding: '5rem' }}>
-      <h1 style={{ fontSize: '2rem' }}>
-        Getting Started for Application Developers
-      </h1>
+      <h1 style={{ fontSize: '2rem' }}>Getting Started for Application Developers</h1>
       <Divider />
       <br />
       <h2 style={{ fontSize: '1.3rem' }}>

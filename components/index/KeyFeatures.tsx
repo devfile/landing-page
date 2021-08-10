@@ -4,23 +4,24 @@ import {
   CardHeader,
   CardHeaderMain,
   CardTitle,
-  CardBody,
+  CardBody
 } from '@patternfly/react-core';
 
-import keyFeaturesList from '@components/index/keyFeaturesList';
-import cogIcon from '../../public/images/cogs.png';
+import type { TitleDescriptionList } from 'custom-types';
+import cogIcon from '../../public/images/cogs.svg';
 
-const KeyFeatures = (
+export interface KeyFeaturesProps {
+  keyFeaturesList: TitleDescriptionList;
+}
+
+const KeyFeatures: React.FC<KeyFeaturesProps> = ({ keyFeaturesList }: KeyFeaturesProps) => (
   <div>
     <h1 style={{ fontSize: '2rem' }}>Key Features</h1>
     <h4 style={{ color: 'var(--pf-global--Color--200)' }}>with devfiles</h4>
     <br />
     <div style={{ display: 'flex', overflowX: 'auto' }}>
-      {keyFeaturesList.map((card) => (
-        <Card
-          key={card[0]}
-          style={{ flexShrink: 0, width: '19rem', margin: '1rem' }}
-        >
+      {Object.entries(keyFeaturesList as TitleDescriptionList).map(([title, description]) => (
+        <Card key={title} style={{ flexShrink: 0, width: '19rem', margin: '1rem' }}>
           <CardHeader>
             <CardHeaderMain>
               <Brand
@@ -30,8 +31,8 @@ const KeyFeatures = (
               />
             </CardHeaderMain>
           </CardHeader>
-          <CardTitle>{card[0]}</CardTitle>
-          <CardBody>{card[1]}</CardBody>
+          <CardTitle>{title}</CardTitle>
+          <CardBody>{description}</CardBody>
         </Card>
       ))}
     </div>

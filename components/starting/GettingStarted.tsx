@@ -9,11 +9,7 @@ function GettingStarted() {
 
   return (
     <Page
-      sidebar={
-        <PageSidebar
-          nav={<NavExpandableList onClick={setPage} current={currentPage} />}
-        />
-      }
+      sidebar={<PageSidebar nav={<NavExpandableList onClick={setPage} current={currentPage} />} />}
     >
       {currentPage}
     </Page>

@@ -13,30 +13,30 @@ function StartingNavList() {
       'Application Developer',
       {
         'Why devfiles': appDevfilesPage,
-        'Getting started': appStartingPage,
-      },
+        'Getting started': appStartingPage
+      }
     ],
     [
       'Technology and Tools Builders',
       {
         'Why devfiles': techDevfilesPage,
-        'Getting started': techStartingPage,
-      },
+        'Getting started': techStartingPage
+      }
     ],
     [
       'Enterprise Architect and Runtime Provider',
       {
         'Why devfiles': enterpriseDevfilesPage,
-        'Getting started': enterpriseStartingPage,
-      },
+        'Getting started': enterpriseStartingPage
+      }
     ],
     [
       'Registry Administrator',
       {
         'Why devfiles': registryDevfilesPage,
-        'Getting started': registryStartingPage,
-      },
-    ],
+        'Getting started': registryStartingPage
+      }
+    ]
   ];
 }
 
