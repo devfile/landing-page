@@ -1,8 +1,0 @@
-.select::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-.select::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  border-radius: 0.25rem;
-}

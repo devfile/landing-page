@@ -16,7 +16,6 @@ const WhyDevfiles: React.FC<WhyDevfilesProps> = ({ whyDevfilesList }: WhyDevfile
         ))}
       </ul>
       <br />
-      <br />
     </GridItem>
     <GridItem span={2}></GridItem>
   </Grid>
