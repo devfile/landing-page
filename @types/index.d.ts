@@ -1,1 +1,5 @@
-declare module 'custom-types' {}
+declare module 'custom-types' {
+  export interface TitleDescriptionList {
+    [key: string]: string;
+  }
+}

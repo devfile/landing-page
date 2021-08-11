@@ -3,9 +3,7 @@ import { PageSection, Divider } from '@patternfly/react-core';
 const registryStartingPage = () => (
   <PageSection>
     <div style={{ padding: '5rem' }}>
-      <h1 style={{ fontSize: '2rem' }}>
-        Getting Started for Registry Administrators
-      </h1>
+      <h1 style={{ fontSize: '2rem' }}>Getting Started for Registry Administrators</h1>
       <Divider />
       <br />
       <h2 style={{ fontSize: '1.3rem' }}>

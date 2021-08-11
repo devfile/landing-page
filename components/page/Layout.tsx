@@ -1,8 +1,6 @@
 import Meta from '@components/page/Meta';
 import Footer from '@components/page/Footer';
 
-import { server } from '@util/index';
-
 import Link from 'next/link';
 import {
   Brand,
@@ -15,7 +13,7 @@ import {
 } from '@patternfly/react-core';
 
 import devfileLogo from '../../public/images/devfileLogo.svg';
-import githubLogo from '../../public/images/githubLogo.png';
+import githubLogo from '../../public/images/githubLogo.svg';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -28,18 +26,16 @@ export interface LayoutProps {
  */
 const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   const logoProps = {
-    href: server,
+    href: '/',
   };
 
   const nav = (
     <Nav variant="horizontal">
       <NavList>
         <NavItem>
-          {/* <Link href="/starting"> */}
           <a data-cy="getting-started-button" href="/landing-page/starting">
             Getting Started
           </a>
-          {/* </Link> */}
         </NavItem>
         <NavItem>
           <a target="_blank" rel="noreferrer" href="https://docs.devfile.io">
@@ -88,8 +84,6 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
     <Page
       header={Header}
       style={{
-        // display: 'flex',
-        // flexDirection: 'column',
         minHeight: '100vh',
         margin: '0',
         backgroundColor: 'var(--pf-global--BackgroundColor--dark-100)',

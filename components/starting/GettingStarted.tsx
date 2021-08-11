@@ -14,19 +14,13 @@ function GettingStarted(props: {
       sidebar={
         <PageSidebar
           nav={
-            <NavExpandableList
-              navProps={props.navProps}
-              onClick={setPage}
-              current={currentPage}
-            />
+            <NavExpandableList navProps={props.navProps} onClick={setPage} current={currentPage} />
           }
         />
       }
     >
       <PageSection>
-        <article
-          dangerouslySetInnerHTML={{ __html: marked('**This is bold**') }}
-        ></article>
+        <article dangerouslySetInnerHTML={{ __html: marked('**This is bold**') }}></article>
       </PageSection>
     </Page>
   );
