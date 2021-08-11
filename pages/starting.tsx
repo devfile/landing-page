@@ -1,57 +1,26 @@
-import {
-  GetStaticProps,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
-} from 'next';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 import GettingStarted from '@components/starting/GettingStarted';
+import { getStartingFile } from '@util/server';
 
 /**
  * Renders the {@link StartingPage}
  */
-const StartingPage: React.FC<InferGetStaticPropsType<GetStaticProps>> = (
-  props
-) => (
+const StartingPage: React.FC<InferGetStaticPropsType<GetStaticProps>> = (props) => (
   <div>
     <GettingStarted appDevfiles={props.appDevfiles} navProps={props} />
   </div>
 );
 
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext
-) => {
-  const appDevfiles = await (
-    await fetch('http://localhost:3000/landing-page/starting_docs/appDevfiles')
-  ).text();
-  const appStarting = await (
-    await fetch('http://localhost:3000/landing-page/starting_docs/appStarting')
-  ).text();
-  const techDevfiles = await (
-    await fetch('http://localhost:3000/landing-page/starting_docs/techDevfiles')
-  ).text();
-  const techStarting = await (
-    await fetch('http://localhost:3000/landing-page/starting_docs/techStarting')
-  ).text();
-  const enterpriseDevfiles = await (
-    await fetch(
-      'http://localhost:3000/landing-page/starting_docs/enterpriseDevfiles'
-    )
-  ).text();
-  const enterpriseStarting = await (
-    await fetch(
-      'http://localhost:3000/landing-page/starting_docs/enterpriseStarting'
-    )
-  ).text();
-  const registryDevfiles = await (
-    await fetch(
-      'http://localhost:3000/landing-page/starting_docs/registryDevfiles'
-    )
-  ).text();
-  const registryStarting = await (
-    await fetch(
-      'http://localhost:3000/landing-page/starting_docs/registryStarting'
-    )
-  ).text();
+export const getStaticProps: GetStaticProps = async () => {
+  const appDevfiles = await getStartingFile('/WebpageText/starting/appDevfiles.md');
+  const appStarting = await getStartingFile('/WebpageText/starting/appStarting.md');
+  const techDevfiles = await getStartingFile('/WebpageText/starting/techDevfiles.md');
+  const techStarting = await getStartingFile('/WebpageText/starting/techStarting.md');
+  const enterpriseDevfiles = await getStartingFile('/WebpageText/starting/enterpriseDevfiles.md');
+  const enterpriseStarting = await getStartingFile('/WebpageText/starting/enterpriseStarting.md');
+  const registryDevfiles = await getStartingFile('/WebpageText/starting/registryDevfiles.md');
+  const registryStarting = await getStartingFile('/WebpageText/starting/registryStarting.md');
   return {
     props: {
       appDevfiles,
@@ -61,8 +30,8 @@ export const getStaticProps: GetStaticProps = async (
       enterpriseDevfiles,
       enterpriseStarting,
       registryDevfiles,
-      registryStarting,
-    },
+      registryStarting
+    }
   };
 };
 
