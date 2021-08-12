@@ -1,7 +1,3 @@
----
-title: Getting Started for Registry Administrators
----
-
 # Getting Started for Registry Administrators
 
 ---

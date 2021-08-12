@@ -1,6 +1,6 @@
 import { useState, PropsWithChildren } from 'react';
 import marked from 'marked';
-import { Page, PageSection, PageSidebar } from '@patternfly/react-core';
+import { Page, PageSection, PageSidebar, TextContent } from '@patternfly/react-core';
 import NavExpandableList from '@components/starting/SideNavigation';
 import React from 'react';
 
@@ -20,7 +20,18 @@ function GettingStarted(props: {
       }
     >
       <PageSection>
-        <article dangerouslySetInnerHTML={{ __html: marked('**This is bold**') }}></article>
+        <TextContent>
+          <article
+            dangerouslySetInnerHTML={{ __html: marked(currentPage) }}
+            style={{
+              fontSize: 'medium',
+              fontStyle: 'normal',
+              fontWeight: 'normal',
+              textIndent: 0,
+              textTransform: 'none'
+            }}
+          ></article>
+        </TextContent>
       </PageSection>
     </Page>
   );

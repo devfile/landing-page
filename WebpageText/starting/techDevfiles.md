@@ -1,7 +1,3 @@
----
-title: Why Devfiles for Technology and Tools Builders
----
-
 # Technology and Tools Builders
 
 ---

@@ -1,7 +1,3 @@
----
-title: Why Devfiles for Enterprise Architects and Runtime Providers
----
-
 # Enterprise Architect and Runtime Provider
 
 ---

@@ -1,7 +1,3 @@
----
-title: Why Devfiles for Application Developers
----
-
 # Application Developer - Stop Configuring and Start Coding
 
 ---

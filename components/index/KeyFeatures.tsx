@@ -22,7 +22,7 @@ const KeyFeatures: React.FC<KeyFeaturesProps> = ({ keyFeaturesList }: KeyFeature
     <br />
     <Gallery hasGutter>
       {Object.entries(keyFeaturesList as TitleDescriptionList).map(([title, description]) => (
-        <Card key={title} style={{ width: '19rem', margin: '1rem' }}>
+        <Card key={title}>
           <CardHeader>
             <CardHeaderMain>
               <Brand

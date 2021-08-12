@@ -1,7 +1,3 @@
----
-title: Why Devfiles for Registry Administrators
----
-
 # Registry Administrator
 
 ---

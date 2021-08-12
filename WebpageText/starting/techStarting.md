@@ -1,7 +1,3 @@
----
-title: Getting Started for Tools Builders
----
-
 # Getting Started for Tools Builders
 
 ---

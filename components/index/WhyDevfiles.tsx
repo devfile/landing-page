@@ -12,7 +12,10 @@ const WhyDevfiles: React.FC<WhyDevfilesProps> = ({ whyDevfilesList }: WhyDevfile
       <br />
       <ul style={{ fontSize: '1.1rem' }}>
         {whyDevfilesList.map((reason, index) => (
-          <li key={index}>{reason}</li>
+          <>
+            <li key={index}>{reason}</li>
+            <br />
+          </>
         ))}
       </ul>
       <br />

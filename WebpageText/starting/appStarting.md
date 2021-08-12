@@ -1,7 +1,3 @@
----
-title: Getting Started for Application Developers
----
-
 # Getting Started for Application Developers
 
 ---

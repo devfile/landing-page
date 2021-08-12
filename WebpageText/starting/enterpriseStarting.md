@@ -1,7 +1,3 @@
----
-title: Getting Started for Enterprise Architects and Runtime Providers
----
-
 # Getting Started for Enterprise Architects and Runtime Providers
 
 ---

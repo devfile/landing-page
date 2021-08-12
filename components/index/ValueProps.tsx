@@ -12,7 +12,7 @@ const ValueProps: React.FC<ValuePropsProps> = ({
   <Grid hasGutter>
     {Object.entries(valuePropsList as TitleDescriptionList).map(([title, description], index) => (
       <>
-        <GridItem span={1}></GridItem>
+        {index % 2 === 0 ? <GridItem span={1}></GridItem> : <></>}
         <GridItem span={5} style={{ padding: '2rem' }}>
           <h2
             style={{
@@ -32,7 +32,7 @@ const ValueProps: React.FC<ValuePropsProps> = ({
             {description}
           </div>
         </GridItem>
-        {index % 2 === 0 ? <GridItem span={1}></GridItem> : <></>}
+        {index % 2 === 0 ? <></> : <GridItem span={1}></GridItem>}
       </>
     ))}
   </Grid>

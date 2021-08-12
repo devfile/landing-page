@@ -6,30 +6,30 @@ function StartingNavList(props: PropsWithChildren<{ [key: string]: any }>) {
       'Application Developer',
       {
         'Why devfiles': props.appDevfiles,
-        'Getting started': props.appStarting,
-      },
+        'Getting started': props.appStarting
+      }
     ],
     [
       'Technology and Tools Builders',
       {
         'Why devfiles': props.techDevfiles,
-        'Getting started': props.techStarting,
-      },
+        'Getting started': props.techStarting
+      }
     ],
     [
       'Enterprise Architect and Runtime Provider',
       {
         'Why devfiles': props.enterpriseDevfiles,
-        'Getting started': props.enterpriseStarting,
-      },
+        'Getting started': props.enterpriseStarting
+      }
     ],
     [
       'Registry Administrator',
       {
         'Why devfiles': props.registryDevfiles,
-        'Getting started': props.registryStarting,
-      },
-    ],
+        'Getting started': props.registryStarting
+      }
+    ]
   ];
 }
 
