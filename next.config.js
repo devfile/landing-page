@@ -14,5 +14,7 @@ module.exports = withPlugins([withTM, withImages, withBundleAnalyzer, withPWA], 
     disable: process.env.NODE_ENV === 'development',
     register: true,
     dest: 'public'
-  }
+  },
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/landing-page/' : '',
+  basePath: '/landing-page'
 });
