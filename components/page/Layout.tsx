@@ -12,7 +12,7 @@ import {
   PageHeaderTools
 } from '@patternfly/react-core';
 
-import devfileLogo from '../../public/images/devfileLogo.svg';
+import devfileLogoText from '../../public/images/devfileWhiteText.svg';
 import githubLogo from '../../public/images/githubLogo.svg';
 
 export interface LayoutProps {
@@ -56,7 +56,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
       logo={
         <Link href="/">
           <a data-cy="go-home-button">
-            <Brand src={devfileLogo} alt="Devfile Logo" style={{ height: '3rem' }} />
+            <Brand src={devfileLogoText} alt="Devfile Logo" style={{ height: '1.7rem' }} />
           </a>
         </Link>
       }

@@ -20,17 +20,17 @@ function NavExpandableList({
   return (
     <Nav onSelect={onSelect}>
       <NavList>
-        {StartingNavList(navProps).map((navSection) => (
+        {StartingNavList(navProps).map(([sectionTitle, pages]) => (
           <NavExpandable
-            title={navSection[0] as string}
-            key={navSection[0] as string}
-            isActive={activeGroup === (navSection[0] as string)}
+            title={sectionTitle as string}
+            key={sectionTitle as string}
+            isActive={activeGroup === (sectionTitle as string)}
             isExpanded
           >
-            {Object.entries(navSection[1] as { [title: string]: string }).map(([title, page]) => (
+            {Object.entries(pages as { [title: string]: string }).map(([title, page]) => (
               <NavItem
                 key={title as string}
-                groupId={navSection[0] as string}
+                groupId={sectionTitle as string}
                 to={'#' + title}
                 isActive={current === page}
                 onClick={() => onClick(page)}
