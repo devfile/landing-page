@@ -2,7 +2,7 @@ import { Brand, Flex, FlexItem, Grid, GridItem } from '@patternfly/react-core';
 
 import devfileLogo from '../../public/images/devfileLogo.svg';
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <div
     style={{
       width: '100%',

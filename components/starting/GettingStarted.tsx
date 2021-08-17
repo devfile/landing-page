@@ -4,10 +4,12 @@ import { Page, PageSection, PageSidebar, TextContent } from '@patternfly/react-c
 import NavExpandableList from '@components/starting/SideNavigation';
 import React from 'react';
 
-function GettingStarted(props: {
+export interface GettingStartedProps {
   appDevfiles: string;
-  navProps: PropsWithChildren<{ [key: string]: any }>;
-}) {
+  navProps: PropsWithChildren<{ [key: string]: string }>;
+}
+
+const GettingStarted: React.FC<GettingStartedProps> = (props: GettingStartedProps) => {
   const [currentPage, setPage] = useState(props.appDevfiles);
   return (
     <Page
@@ -35,6 +37,6 @@ function GettingStarted(props: {
       </PageSection>
     </Page>
   );
-}
+};
 
 export default GettingStarted;
