@@ -16,7 +16,7 @@ export interface KeyFeaturesProps {
 }
 
 const KeyFeatures: React.FC<KeyFeaturesProps> = ({ keyFeaturesList }: KeyFeaturesProps) => (
-  <div>
+  <div style={{ maxWidth: '1250px' }}>
     <h1 style={{ fontSize: '2rem' }}>Key Features</h1>
     <h4 style={{ color: 'var(--pf-global--Color--200)' }}>with devfiles</h4>
     <br />
