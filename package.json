@@ -62,7 +62,9 @@
     "webpack": "^5.38.1"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,html,css,json}": "prettier --write"
+    "*.{js,jsx,ts,tsx,md,html,css,json}": "prettier --write",
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   },
   "optionalDependencies": {
     "@cypress/code-coverage": "^3.9.10",
