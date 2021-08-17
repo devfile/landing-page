@@ -11,7 +11,7 @@ const WhyDevfiles: React.FC<WhyDevfilesProps> = ({ whyDevfilesList }: WhyDevfile
       <h1 style={{ fontSize: '2rem' }}>Why Devfiles?</h1>
       <br />
       <ul style={{ fontSize: '1.1rem' }}>
-        {whyDevfilesList.map((reason, index) => (
+        {(whyDevfilesList as string[]).map((reason, index) => (
           <>
             <li key={index}>{reason}</li>
             <br />

@@ -1,6 +1,6 @@
 {
   "name": "devfile-landing-page",
-  "author": "Braden Wilson",
+  "author": "Red Hat",
   "version": "1.0.0",
   "homepage": "https://devfile.github.io/landing-page",
   "scripts": {

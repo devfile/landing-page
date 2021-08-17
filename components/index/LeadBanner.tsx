@@ -18,7 +18,7 @@ const LeadBanner: React.FC<LeadBannerProps> = ({ leadBannerList }: LeadBannerPro
         <br />
         <Divider component="li" />
         <br />
-        {leadBannerList.map((banner, index) => (
+        {(leadBannerList as string[]).map((banner, index) => (
           <li key={index}>{banner}</li>
         ))}
       </ul>
