@@ -43,7 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
           </a>
         </NavItem>
         <NavItem>
-          <a target="_blank" rel="noreferrer" href="#registry">
+          <a target="_blank" rel="noreferrer" href="https://registry.devfile.io">
             Devfile Registry
           </a>
         </NavItem>
