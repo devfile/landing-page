@@ -32,7 +32,8 @@ const NavExpandableList: React.FC<SideNavProps> = ({
         {StartingNavList(navProps).map(
           ([sectionTitle, pages]): JSX.Element => (
             <NavExpandable
-              title={sectionTitle as string}
+              // @ts-expect-error Does not support span
+              title={<span style={{ textAlign: 'left' }}>{sectionTitle}</span>}
               key={sectionTitle as string}
               isActive={activeGroup === (sectionTitle as string)}
               isExpanded
