@@ -1,50 +1,62 @@
-import { useState } from 'react';
+import { useState, PropsWithChildren, FormEvent } from 'react';
 import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 import StartingNavList from '@components/starting/StartingNavList';
 
-function NavExpandableList({
+export interface SideNavProps {
+  current: string;
+  onClick: (page: string) => void;
+  navProps: PropsWithChildren<{ [key: string]: string }>;
+}
+
+export interface SelectedItem {
+  groupId: string | number;
+  itemId: string | number;
+  to: string;
+  event: FormEvent<HTMLInputElement>;
+}
+
+const NavExpandableList: React.FC<SideNavProps> = ({
   current,
   onClick,
-}: {
-  current: JSX.Element;
-  onClick: (page: JSX.Element) => void;
-}) {
-  const [activeGroup, setActiveGroup] = useState(
-    StartingNavList()[0][0] as string
-  );
+  navProps
+}: SideNavProps) => {
+  const [activeGroup, setActiveGroup] = useState(StartingNavList(navProps)[0][0] as string);
 
-  const onSelect = (result: any) => {
-    setActiveGroup(result.groupId);
+  const onSelect = (result: SelectedItem): void => {
+    setActiveGroup(result.groupId as string);
   };
 
   return (
     <Nav onSelect={onSelect}>
       <NavList>
-        {StartingNavList().map((navSection) => (
-          <NavExpandable
-            title={navSection[0] as string}
-            key={navSection[0] as string}
-            isActive={activeGroup === (navSection[0] as string)}
-            isExpanded
-          >
-            {Object.entries(
-              navSection[1] as { [title: string]: () => JSX.Element }
-            ).map(([title, page]) => (
-              <NavItem
-                key={title as string}
-                groupId={navSection[0] as string}
-                to={'#' + title}
-                isActive={current === page()}
-                onClick={() => onClick(page())}
-              >
-                {title}
-              </NavItem>
-            ))}
-          </NavExpandable>
-        ))}
+        {StartingNavList(navProps).map(
+          ([sectionTitle, pages]): JSX.Element => (
+            <NavExpandable
+              // @ts-expect-error Does not support span
+              title={<span style={{ textAlign: 'left' }}>{sectionTitle}</span>}
+              key={sectionTitle as string}
+              isActive={activeGroup === (sectionTitle as string)}
+              isExpanded
+            >
+              {Object.entries(pages as { [title: string]: string }).map(
+                ([title, page]): JSX.Element => (
+                  <NavItem
+                    key={title as string}
+                    groupId={sectionTitle as string}
+                    to={'#' + title}
+                    isActive={current === page}
+                    onClick={(): void => onClick(page)}
+                  >
+                    {title}
+                  </NavItem>
+                )
+              )}
+            </NavExpandable>
+          )
+        )}
       </NavList>
     </Nav>
   );
-}
+};
 
 export default NavExpandableList;

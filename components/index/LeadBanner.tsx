@@ -2,7 +2,11 @@ import { Brand, Divider, Grid, GridItem } from '@patternfly/react-core';
 
 import devfileLogo from '../../public/images/devfileLogo.svg';
 
-const LeadBanner = (
+export interface LeadBannerProps {
+  leadBannerList: string[];
+}
+
+const LeadBanner: React.FC<LeadBannerProps> = ({ leadBannerList }: LeadBannerProps) => (
   <Grid hasGutter>
     <GridItem span={2}></GridItem>
     <GridItem span={2}>
@@ -14,10 +18,9 @@ const LeadBanner = (
         <br />
         <Divider component="li" />
         <br />
-        <li>
-          An open standard to simplify and accelerate developer workflows and
-          enable consistent development environments across projects and teams.
-        </li>
+        {(leadBannerList as string[]).map((banner, index) => (
+          <li key={index}>{banner}</li>
+        ))}
       </ul>
     </GridItem>
     <GridItem span={3}></GridItem>

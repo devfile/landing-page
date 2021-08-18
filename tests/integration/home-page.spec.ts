@@ -1,3 +1,8 @@
+// eslint-disable-next-line spaced-comment
+/// <reference types="cypress" />
+
+export {};
+
 describe('Testing links on the home page', () => {
   it('successfully loads', () => {
     cy.visit('/'); // change URL to match your dev URL

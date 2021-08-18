@@ -1,8 +1,6 @@
 import Meta from '@components/page/Meta';
 import Footer from '@components/page/Footer';
 
-import { server } from '@util/index';
-
 import Link from 'next/link';
 import {
   Brand,
@@ -11,11 +9,11 @@ import {
   NavList,
   Page,
   PageHeader,
-  PageHeaderTools,
+  PageHeaderTools
 } from '@patternfly/react-core';
 
-import devfileLogo from '../../public/images/devfileLogo.svg';
-import githubLogo from '../../public/images/githubLogo.png';
+import devfileLogoText from '../../public/images/devfileWhiteText.svg';
+import githubLogo from '../../public/images/githubLogo.svg';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -28,18 +26,16 @@ export interface LayoutProps {
  */
 const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   const logoProps = {
-    href: server,
+    href: '/'
   };
 
   const nav = (
     <Nav variant="horizontal">
       <NavList>
         <NavItem>
-          {/* <Link href="/starting"> */}
           <a data-cy="getting-started-button" href="/landing-page/starting">
             Getting Started
           </a>
-          {/* </Link> */}
         </NavItem>
         <NavItem>
           <a target="_blank" rel="noreferrer" href="https://docs.devfile.io">
@@ -47,7 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
           </a>
         </NavItem>
         <NavItem>
-          <a target="_blank" rel="noreferrer" href="#registry">
+          <a target="_blank" rel="noreferrer" href="https://registry.devfile.io">
             Devfile Registry
           </a>
         </NavItem>
@@ -60,11 +56,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
       logo={
         <Link href="/">
           <a data-cy="go-home-button">
-            <Brand
-              src={devfileLogo}
-              alt="Devfile Logo"
-              style={{ height: '3rem' }}
-            />
+            <Brand src={devfileLogoText} alt="Devfile Logo" style={{ height: '1.7rem' }} />
           </a>
         </Link>
       }
@@ -73,11 +65,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
       headerTools={
         <PageHeaderTools>
           <a target="_blank" rel="noreferrer" href="https://github.com/devfile">
-            <Brand
-              src={githubLogo}
-              alt="GitHub Logo"
-              style={{ height: '3rem' }}
-            />
+            <Brand src={githubLogo} alt="GitHub Logo" style={{ height: '3rem' }} />
           </a>
         </PageHeaderTools>
       }
@@ -85,7 +73,14 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   );
 
   return (
-    <Page header={Header}>
+    <Page
+      header={Header}
+      style={{
+        minHeight: '100vh',
+        margin: '0',
+        backgroundColor: 'var(--pf-global--BackgroundColor--dark-100)'
+      }}
+    >
       <Meta />
       <main>{children}</main>
       <Footer />
