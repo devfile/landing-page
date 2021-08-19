@@ -1,5 +1,8 @@
 name: Build and Deploy
-on: [push]
+on:
+  push:
+  repository_dispatch:
+    types: [build-and-deploy]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -8,7 +11,7 @@ jobs:
         working-directory: ./pages
 
     steps:
-      - name: Checkout
+      - name: Checkout landing page
         uses: actions/checkout@v2
         with:
           persist-credentials: false
@@ -20,10 +23,24 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Checkout docs
+        uses: actions/checkout@v2
+        with:
+          repository: braden-wilson/docs  # Changed
+
+      - name: Install docs
+        run: yarn install
+      
+      - name: Build site with antora
+        uses: kameshsampath/antora-site-action@master
+        with:
+          antora_playbook: antora-playbook.yml
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
+          GITHUB_TOKEN: ${{ secrets.DOCS_DEPLOY_TOKEN }}
+          BRANCH: master
           FOLDER: out
+          REPOSITORY_NAME: braden-wilson/braden-wilson.github.io  # Changed
           CLEAN: true
