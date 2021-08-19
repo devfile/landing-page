@@ -31,7 +31,9 @@ jobs:
 
       - name: Install docs
         run: |
+          cd ..
           ls
+          cd docs
           yarn install
       
       - name: Build site with antora
