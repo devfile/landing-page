@@ -27,9 +27,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: braden-wilson/docs  # Changed
+          path: docs
 
       - name: Install docs
-        run: yarn install
+        run: |
+          cd docs
+          yarn install
       
       - name: Build site with antora
         uses: kameshsampath/antora-site-action@master
