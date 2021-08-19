@@ -27,19 +27,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: braden-wilson/docs  # Changed
+          persist-credentials: false
           path: docs
 
       - name: Install docs
         run: |
-          cd ..
-          ls
-          cd docs
+          cd ../docs
           yarn install
       
       - name: Build site with antora
         uses: kameshsampath/antora-site-action@master
         with:
-          antora_playbook: antora-playbook.yml
+          antora_playbook: docs/antora-playbook.yml
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
