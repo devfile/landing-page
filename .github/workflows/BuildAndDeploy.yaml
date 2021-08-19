@@ -29,11 +29,6 @@ jobs:
           repository: braden-wilson/docs  # Changed
           persist-credentials: false
           path: docs
-
-      # - name: Install docs
-      #   run: |
-      #     cd ../docs
-      #     yarn install
       
       - name: Build site with antora
         uses: kameshsampath/antora-site-action@master
@@ -43,7 +38,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          GITHUB_TOKEN: ${{ secrets.DOCS_DEPLOY_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           BRANCH: master
           FOLDER: out
           REPOSITORY_NAME: braden-wilson/braden-wilson.github.io  # Changed
