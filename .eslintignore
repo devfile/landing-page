@@ -8,7 +8,6 @@ out
 stacks
 
 next-env.d.ts
-next.config.js
 
 /public/*.js
 /public/*.js.map
