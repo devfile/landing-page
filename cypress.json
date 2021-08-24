@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://localhost:3000/landing-page",
+  "baseUrl": "http://localhost:3000",
   "fixturesFolder": "tests/fixtures",
   "integrationFolder": "tests/integration",
   "supportFile": "tests/support/index.ts",
