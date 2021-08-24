@@ -2,26 +2,15 @@
 
 ---
 
-## **Devfile specification**
+**[Devfile specification](https://docs.devfile.io/devfile/2.1.0/user-guide/api-reference.html)**
 
-...
+**Detailed runtime behaviour of the tools - coming soon**
 
-## **Detailed runtime behavior of the tools (e.g. lifecycle of containers, init container behavior)**
+**[Devfile library for reading and writing to devfile](https://github.com/devfile/library)**
 
-...
+**Devfile registry library for interacting with the devfile registry, e.g. finding the list of devfiles available, metadata associated with each devfile, and downloading content of the stacks.**
 
-## **Devfile library for reading and writing to devfile**
+- [Go Library](https://github.com/devfile/registry-support/tree/main/registry-library)
+- [REST API](https://github.com/johnmcollier/registry-docs/blob/main/registry-REST-API.adoc)
 
-...
-
-## **Devfile registry library for interacting with the devfile registry, e.g. finding the list of devfiles available, metadata associated with each devfile, and downloading content of the stacks.**
-
-Go Library REST API
-
-## **Community devfile registry**
-
-...
-
-## **Custom registry discovery**
-
-...
+**[Community devfile registry](https://registry.devfile.io)**
