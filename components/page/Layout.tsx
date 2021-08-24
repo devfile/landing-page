@@ -33,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
     <Nav variant="horizontal">
       <NavList>
         <NavItem>
-          <a data-cy="getting-started-button" href="/landing-page/starting">
+          <a data-cy="getting-started-button" href="/starting">
             Getting Started
           </a>
         </NavItem>
