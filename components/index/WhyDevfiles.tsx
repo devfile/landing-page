@@ -8,7 +8,7 @@ const WhyDevfiles: React.FC<WhyDevfilesProps> = ({ whyDevfilesList }: WhyDevfile
   <Grid>
     <GridItem span={2}></GridItem>
     <GridItem span={8} style={{ textAlign: 'center' }}>
-      <h1 style={{ fontSize: '2rem' }}>Why Devfiles?</h1>
+      <h1 style={{ fontSize: '2rem' }}>Why devfiles?</h1>
       <br />
       <ul style={{ fontSize: '1.1rem' }}>
         {(whyDevfilesList as string[]).map((reason, index) => (

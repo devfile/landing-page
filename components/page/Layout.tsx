@@ -64,7 +64,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
       topNav={nav}
       headerTools={
         <PageHeaderTools>
-          <a target="_blank" rel="noreferrer" href="https://github.com/devfile">
+          <a target="_blank" rel="noreferrer" href="https://github.com/devfile/api">
             <Brand src={githubLogo} alt="GitHub Logo" style={{ height: '3rem' }} />
           </a>
         </PageHeaderTools>
