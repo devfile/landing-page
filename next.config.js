@@ -14,5 +14,8 @@ module.exports = withPlugins([withTM, withImages, withBundleAnalyzer, withPWA], 
     disable: process.env.NODE_ENV === 'development',
     register: true,
     dest: 'public'
+  },
+  env: {
+    docsPath: process.env.NODE_ENV === 'production' ? '/docs' : 'https://docs.devfile.io'
   }
 });
