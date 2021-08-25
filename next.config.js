@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withPlugins = require('next-compose-plugins');
 const withPWA = require('next-pwa');
 const withImages = require('next-images');
@@ -15,6 +16,7 @@ module.exports = withPlugins([withTM, withImages, withBundleAnalyzer, withPWA], 
     register: true,
     dest: 'public'
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/landing-page/' : '',
-  basePath: '/landing-page'
+  env: {
+    docsPath: process.env.NODE_ENV === 'development' ? 'https://docs.devfile.io' : '/docs'
+  }
 });

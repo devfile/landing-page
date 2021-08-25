@@ -56,13 +56,19 @@ const Footer: React.FC = () => (
         <br />
         <ul>
           <li>
-            <a>Registry</a>
+            <a target="_blank" rel="noreferrer" href="https://registry.devfile.io/">
+              Registry
+            </a>
           </li>
           <li>
-            <a>Docs</a>
+            <a target="_blank" rel="noreferrer" href="https://docs.devfile.io/">
+              Docs
+            </a>
           </li>
           <li>
-            <a>GitHub</a>
+            <a target="_blank" rel="noreferrer" href="https://github.com/devfile/api">
+              GitHub
+            </a>
           </li>
         </ul>
       </GridItem>

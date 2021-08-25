@@ -2,18 +2,10 @@
 
 ---
 
-## **Devfile specification**
+**[Devfile specification](https://docs.devfile.io/devfile/2.1.0/user-guide/api-reference.html)**
 
-...
+**[Stack author’s guide documentation](https://docs.devfile.io/devfile/2.1.0/user-guide/authoring-stacks.html)**
 
-## **Stack author’s guide documentation**
+**[Onboarding process and requirements of the community registry](https://github.com/devfile/registry/blob/main/CONTRIBUTING.md)**
 
-...
-
-## **Onboarding process and requirements of the community registry**
-
-...
-
-## **Community registry viewer**
-
-...
+**[Community registry viewer](https://registry.devfile.io/viewer)**
