@@ -6,16 +6,14 @@ Landing Page repository for devfile.io.
 
 To start, run `yarn install`.
 
-Start a development server with `yarn dev` or `npm run dev`.
-
 Build the application with `yarn build` or `npm run build`.
+
+Start a development server with `yarn dev` or `npm run dev`.
 
 Start a production server with `yarn start` or `npm run start`.
 
-## Github Pages
+## CI/CD
 
-This repo is hosted on github pages at https://devfile.github.io/landing-page.
+[devfile/docs workflow](https://github.com/devfile/docs/blob/master/.github/workflows/main.yaml) dispatches an event to devfile/landing-page repository.
 
-The Github Pages site is hosted from the gh-pages branch of this repository, which the main branch deploys to every time a change is pushed.
-
-Because of the _/landing-page_ extension on the Github Pages site, when viewing the site locally you will have to add this extension, for example [localhost:3000/landing-page](localhost:3000/landing-page).
+[devfile/landing-page workflow](./.github/workflows/BuildAndDeploy.yaml) receives the event and triggers its job. After building the landing-page & docs, the workflow deploys the built site to [devfile/devfile.github.io](https://github.com/devfile/devfile.github.io) which hosts the github pages at https://devfile.github.io.

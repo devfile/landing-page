@@ -8,35 +8,42 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./pages
 
     steps:
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      # Landing Page repo
       - name: Checkout landing page
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
-      - name: Install
-        run: npm install
-      - name: Build
-        run: npm run build
+      - name: Install landing page deps
+        run: yarn install
+      - name: Build landing page deps
+        run: yarn build
 
+      # Docs repo
       - name: Checkout docs
         uses: actions/checkout@v2
         with:
           repository: devfile/docs
           persist-credentials: false
           path: docs
-      
-      - name: Build site with antora
+
+      - name: Install docs deps
+        run: yarn --cwd ./docs install
+      - name: Generate docs api references
+        run: yarn --cwd ./docs generate-api-reference
+      - name: Build docs site with antora
         uses: kameshsampath/antora-site-action@master
         with:
           antora_playbook: docs/antora-playbook.yml
 
+      # Deploy built landing page and docs site
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
