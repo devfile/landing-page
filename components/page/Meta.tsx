@@ -35,7 +35,7 @@ const Meta: React.FC<MetaProps> = ({
 );
 
 Meta.defaultProps = {
-  title: 'devfiles',
+  title: 'Devfile',
   keywords: 'Devfile, OpenShift, Kubernetes',
   description: 'Devfile Landing Page'
 };
