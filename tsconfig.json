@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"],
-      "@util/*": ["util/*"]
+      "@src/*": ["src/*"],
+      "@public/*": ["public/*"],
+      "@config/*": ["config/*"]
     },
     "allowJs": false,
     "target": "es5",

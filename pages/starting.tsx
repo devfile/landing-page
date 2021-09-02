@@ -1,7 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-import GettingStarted from '@components/starting/GettingStarted';
-import { getStartingFile } from '@util/server';
+import GettingStarted from '@src/components/starting/GettingStarted';
+import { getStartingFile } from '@src/util/server';
 
 /**
  * Renders the {@link StartingPage}

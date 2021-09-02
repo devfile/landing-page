@@ -1,0 +1,22 @@
+.headerText {
+  color: var(--pf-global--link--Color);
+  text-align: center;
+}
+
+.bodyText {
+  color: var(--pf-global--Color--200);
+  text-align: center;
+}
+
+.gridItem {
+  justify-content: 'center';
+  padding: '2rem';
+  display: 'flex';
+  padding: 1rem 1rem;
+}
+
+.grid {
+  background-color: var(--pf-global--BackgroundColor--100);
+  color: var(--pf-global--Color--100);
+  padding: 3rem;
+}
