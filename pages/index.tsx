@@ -1,6 +1,6 @@
-import type { TitleDescriptionList } from 'custom-types';
+import { MainPageText } from 'custom-types';
 import { ValuePropositions, WhyDevfiles, KeyFeatures } from '@src/components';
-import { getTitleDescriptionList, getDescriptionList } from '@src/util/server';
+import { getMainPageText } from '@src/util/server';
 import { InferGetStaticPropsType, GetStaticProps } from 'next';
 import { Stack, StackItem } from '@patternfly/react-core';
 
@@ -9,40 +9,31 @@ import { Stack, StackItem } from '@patternfly/react-core';
  */
 
 const HomePage: React.FC<InferGetStaticPropsType<GetStaticProps>> = ({
-  keyFeaturesList,
-  valuePropsList,
-  whyDevfilesList
+  mainPageText
 }: InferGetStaticPropsType<GetStaticProps>) => (
   <div>
     <Stack>
       <StackItem isFilled>
-        <WhyDevfiles whyDevfilesList={whyDevfilesList} />
+        <WhyDevfiles whyDevfilesContainer={(mainPageText as MainPageText).WhyDevfiles} />
       </StackItem>
       <StackItem isFilled>
-        <ValuePropositions valuePropositionList={valuePropsList} />
+        <ValuePropositions
+          valuePropositionContainer={(mainPageText as MainPageText).ValuePropositions}
+        />
       </StackItem>
       <StackItem isFilled>
-        <KeyFeatures keyFeaturesList={keyFeaturesList} />
+        <KeyFeatures keyFeaturesContainer={(mainPageText as MainPageText).KeyFeatures} />
       </StackItem>
     </Stack>
   </div>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const keyFeaturesList: TitleDescriptionList = await getTitleDescriptionList(
-    '/WebpageText/index/KeyFeaturesList.json'
-  );
-  const valuePropsList: TitleDescriptionList = await getTitleDescriptionList(
-    '/WebpageText/index/ValuePropsList.json'
-  );
-  const whyDevfilesList: string[] = await getDescriptionList(
-    '/WebpageText/index/WhyDevfilesList.json'
-  );
+  const mainPageText = await getMainPageText();
+
   return {
     props: {
-      keyFeaturesList,
-      valuePropsList,
-      whyDevfilesList
+      mainPageText
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

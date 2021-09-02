@@ -1,8 +1,4 @@
 declare module 'custom-types' {
-  export interface TitleDescriptionList {
-    [key: string]: string;
-  }
-
   export interface Link {
     name: string;
     link: string;
@@ -36,17 +32,15 @@ declare module 'custom-types' {
     body: string;
   }
 
+  export interface TextContainerArr {
+    title?: string;
+    body?: string;
+    items: TextContainer[];
+  }
+
   export interface MainPageText {
     WhyDevfiles: TextContainer;
-    ValuePropositions: {
-      title?: string;
-      body?: string;
-      items: TextContainer[];
-    };
-    KeyFeatures: {
-      title?: string;
-      body?: string;
-      items: TextContainer[];
-    };
+    ValuePropositions: TextContainerArr;
+    KeyFeatures: TextContainerArr;
   }
 }

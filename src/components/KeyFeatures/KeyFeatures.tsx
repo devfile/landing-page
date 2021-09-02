@@ -1,5 +1,5 @@
 import styles from './KeyFeatures.module.css';
-import type { TitleDescriptionList } from 'custom-types';
+import type { TextContainerArr } from 'custom-types';
 import cogIcon from '@public/images/cogs.svg';
 import {
   Brand,
@@ -15,20 +15,22 @@ import {
 } from '@patternfly/react-core';
 
 export interface KeyFeaturesProps {
-  keyFeaturesList: TitleDescriptionList;
+  keyFeaturesContainer: TextContainerArr;
 }
 
-export const KeyFeatures: React.FC<KeyFeaturesProps> = ({ keyFeaturesList }: KeyFeaturesProps) => (
+export const KeyFeatures: React.FC<KeyFeaturesProps> = ({
+  keyFeaturesContainer
+}: KeyFeaturesProps) => (
   <div className={styles.container}>
     <div className={styles.galleryContainer}>
       <TextContent>
         <Text component={TextVariants.h1} className={styles.headerText}>
-          Key Features
+          {keyFeaturesContainer.title}
         </Text>
-        <Text className={styles.headerSubText}>with devfiles</Text>
+        <Text className={styles.headerSubText}>{keyFeaturesContainer.body}</Text>
       </TextContent>
       <Gallery hasGutter>
-        {Object.entries(keyFeaturesList as TitleDescriptionList).map(([title, description]) => (
+        {keyFeaturesContainer.items.map(({ title, body }) => (
           <Card key={title}>
             <CardHeader>
               <CardHeaderMain>
@@ -36,7 +38,7 @@ export const KeyFeatures: React.FC<KeyFeaturesProps> = ({ keyFeaturesList }: Key
               </CardHeaderMain>
             </CardHeader>
             <CardTitle>{title}</CardTitle>
-            <CardBody>{description}</CardBody>
+            <CardBody>{body}</CardBody>
           </Card>
         ))}
       </Gallery>

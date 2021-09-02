@@ -1,22 +1,20 @@
 import styles from './WhyDevfiles.module.css';
+import { TextContainer } from 'custom-types';
 import { Text, TextContent, TextVariants } from '@patternfly/react-core';
 
 export interface WhyDevfilesProps {
-  whyDevfilesList: string[];
+  whyDevfilesContainer: TextContainer;
 }
 
-export const WhyDevfiles: React.FC<WhyDevfilesProps> = ({ whyDevfilesList }: WhyDevfilesProps) => (
+export const WhyDevfiles: React.FC<WhyDevfilesProps> = ({
+  whyDevfilesContainer
+}: WhyDevfilesProps) => (
   <div className={styles.container}>
     <TextContent>
       <Text component={TextVariants.h1} className={styles.headerText}>
-        Why Devfiles?
+        {whyDevfilesContainer.title}
       </Text>
-      <br />
-      {(whyDevfilesList as string[]).map((reason, index) => (
-        <Text key={index} className={styles.bodyText}>
-          {reason}
-        </Text>
-      ))}
+      <Text className={styles.bodyText}>{whyDevfilesContainer.body}</Text>
     </TextContent>
     <br />
   </div>
