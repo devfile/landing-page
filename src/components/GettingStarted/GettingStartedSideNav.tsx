@@ -30,11 +30,11 @@ export const GettingStartedSideNav: React.FC<GettingStartedSideNavProps> = ({
   return (
     <div className={styles.container}>
       <Nav onSelect={onSelect} className={styles.nav}>
-        <NavList className={styles.navList}>
+        <NavList>
           {gettingStartedFiles.map(({ header, subHeaderWithHTML }) => (
             <NavExpandable
               // @ts-expect-error Does not support span
-              title={<span style={{ textAlign: 'left' }}>{header}</span>}
+              title={<span className={style.title}>{header}</span>}
               key={header}
               isActive={header === currentPage.header}
             >

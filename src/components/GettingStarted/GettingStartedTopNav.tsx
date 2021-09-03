@@ -1,5 +1,6 @@
+import styles from './GettingStartedTopNav.module.css';
 import type { GettingStartedFiles, SelectedItem, NavItemElem } from 'custom-types';
-import { Nav, NavItem, NavList, Text, TextContent, TextVariants } from '@patternfly/react-core';
+import { Nav, NavItem, NavList, NavExpandable } from '@patternfly/react-core';
 
 export interface GettingStartedTopNavProps {
   currentPage: NavItemElem;
@@ -27,48 +28,30 @@ export const GettingStartedTopNav: React.FC<GettingStartedTopNavProps> = ({
   };
 
   return (
-    <Nav
-      onSelect={onSelect}
-      variant="horizontal"
-      style={{
-        backgroundColor: 'var(--pf-global--BackgroundColor--dark-300)',
-        marginBottom: '1rem',
-        padding: '0.5rem 0'
-      }}
-    >
+    <Nav onSelect={onSelect} variant="horizontal" className={styles.nav}>
       <NavList>
         {gettingStartedFiles.map(({ header, subHeaderWithHTML }) => (
-          <div
-            key={header}
-            style={{
-              padding: '1rem',
-              borderLeft: '1px solid gray',
-              borderRight: '1px solid gray'
-            }}
-          >
-            <TextContent>
-              <Text
-                component={TextVariants.h3}
-                style={{
-                  color: 'var(--pf-c-nav__link--Color)',
-                  borderBottom: '1px solid gray'
-                }}
-              >
-                {header}
-              </Text>
-            </TextContent>
-            {subHeaderWithHTML.map(({ subHeader, html }) => (
-              <NavItem
-                key={subHeader}
-                groupId={header}
-                itemId={subHeader}
-                to={'#' + subHeader}
-                isActive={header === currentPage.header && subHeader === currentPage.subHeader}
-                onClick={(): void => setCurrentPage({ header, subHeader, html })}
-              >
-                {subHeader}
-              </NavItem>
-            ))}
+          <div key={header} className={styles.navContainer}>
+            <NavExpandable
+              // @ts-expect-error Does not support span
+              title={<span className={styles.title}>{header}</span>}
+              key={header}
+              isActive={header === currentPage.header}
+              className={styles.navExpandable}
+            >
+              {subHeaderWithHTML.map(({ subHeader, html }) => (
+                <NavItem
+                  key={subHeader}
+                  groupId={header}
+                  itemId={subHeader}
+                  to={'#' + subHeader}
+                  isActive={header === currentPage.header && subHeader === currentPage.subHeader}
+                  onClick={(): void => setCurrentPage({ header, subHeader, html })}
+                >
+                  {subHeader}
+                </NavItem>
+              ))}
+            </NavExpandable>
           </div>
         ))}
       </NavList>

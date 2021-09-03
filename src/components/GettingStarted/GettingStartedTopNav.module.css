@@ -1,0 +1,19 @@
+.nav {
+  background-color: var(--pf-global--BackgroundColor--dark-300);
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.navContainer {
+  padding: 1rem;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+.title {
+  text-align: left;
+}
+
+.navExpandable {
+  display: block;
+}
