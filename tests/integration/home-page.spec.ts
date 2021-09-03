@@ -9,7 +9,7 @@ describe('Testing links on the home page', () => {
   });
   it('site navigation works', () => {
     cy.contains('Getting Started').click();
-    cy.url().should('include', '/starting');
+    cy.url().should('include', '/getting-started');
 
     cy.get('[data-cy=go-home-button]').click();
     cy.url().should('eq', Cypress.config().baseUrl);

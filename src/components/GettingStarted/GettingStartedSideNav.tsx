@@ -34,7 +34,7 @@ export const GettingStartedSideNav: React.FC<GettingStartedSideNavProps> = ({
           {gettingStartedFiles.map(({ header, subHeaderWithHTML }) => (
             <NavExpandable
               // @ts-expect-error Does not support span
-              title={<span className={style.title}>{header}</span>}
+              title={<span className={styles.title}>{header}</span>}
               key={header}
               isActive={header === currentPage.header}
             >

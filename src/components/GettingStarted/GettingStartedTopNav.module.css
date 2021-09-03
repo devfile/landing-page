@@ -15,5 +15,5 @@
 }
 
 .navExpandable {
-  display: block;
+  display: block !important;
 }
