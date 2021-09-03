@@ -3,7 +3,7 @@
   "bannerTitle": "Devfiles",
   "bannerBody": "An open standard defining containerized development environments that enables developer tools to simplify and accelerate workflows.",
   "headerLinks": [
-    { "name": "Getting Started", "link": "/starting" },
+    { "name": "Getting Started", "link": "/getting-started" },
     { "name": "Docs", "link": "https://devfile.io/docs" },
     { "name": "Devfile Registry", "link": "https://registry.devfile.io" }
   ],

@@ -1,2 +1,2 @@
 export * from './getMainPageText';
-export * from './getStartingFile';
+export * from './getGettingStartedFiles';

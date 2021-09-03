@@ -43,4 +43,17 @@ declare module 'custom-types' {
     ValuePropositions: TextContainerArr;
     KeyFeatures: TextContainerArr;
   }
+
+  export interface FolderTree {
+    header: string;
+    subHeaders: string[];
+  }
+
+  export interface GettingStartedFiles {
+    header: string;
+    subHeaderWithHTML: {
+      subHeader: string;
+      html: string;
+    }[];
+  }
 }

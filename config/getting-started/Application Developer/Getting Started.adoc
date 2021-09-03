@@ -1,0 +1,14 @@
+== Getting Started for Application Developers
+
+'''''
+
+*https://docs.devfile.io/devfile/2.1.0/user-guide/api-reference.html[Devfile
+specification]*
+
+*Tools that provides devfile support:*
+
+* https://odo.dev/[odo]
+* https://medium.com/eclipse-che-blog/devfile-v2-and-ide-plug-ins-in-eclipse-che-7a560ae724b1[Eclipse
+Che]
+
+*https://registry.devfile.io/viewer[Community registry viewer]*

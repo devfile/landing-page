@@ -1,0 +1,14 @@
+== Getting Started for Enterprise Architects and Runtime Providers
+
+'''''
+
+*https://docs.devfile.io/devfile/2.1.0/user-guide/api-reference.html[Devfile
+specification]*
+
+*https://docs.devfile.io/devfile/2.1.0/user-guide/authoring-stacks.html[Stack
+author’s guide documentation]*
+
+*https://github.com/devfile/registry/blob/main/CONTRIBUTING.md[Onboarding
+process and requirements of the community registry]*
+
+*https://registry.devfile.io/viewer[Community registry viewer]*

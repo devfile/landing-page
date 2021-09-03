@@ -23,6 +23,7 @@
     "@next/bundle-analyzer": "^11.0.1",
     "@patternfly/react-core": "^4.121.1",
     "@patternfly/react-icons": "^4.10.7",
+    "asciidoctor": "^2.2.5",
     "next": "^11.0.1",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.8.1",
@@ -36,7 +37,6 @@
   "license": "EPL-2.0",
   "devDependencies": {
     "@babel/core": "^7.14.3",
-    "@types/marked": "^2.0.4",
     "@types/node": "^15.6.1",
     "@types/react": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "^4.26.1",

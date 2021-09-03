@@ -1,5 +1,6 @@
 export * from './Banner';
 export * from './Footer';
+export * from './GettingStarted';
 export * from './Header';
 export * from './KeyFeatures';
 export * from './Layout';
