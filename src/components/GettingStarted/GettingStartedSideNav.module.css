@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  display: inline-flex;
+  flex-grow: 0;
+  background-color: var(--pf-global--BackgroundColor--dark-300);
+}
+
+.navList {
+  flex-grow: 0;
+}
+
+@media (max-width: 991px) {
+  .nav {
+    flex-grow: 1;
+  }
+
+  .navList {
+    flex-grow: 1;
+  }
+}

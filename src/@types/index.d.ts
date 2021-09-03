@@ -56,4 +56,22 @@ declare module 'custom-types' {
       html: string;
     }[];
   }
+
+  export interface WindowDimensions {
+    width: number | null;
+    height: number | null;
+  }
+
+  export interface SelectedItem {
+    groupId: string | number;
+    itemId: string | number;
+    to: string;
+    event: React.FormEvent<HTMLInputElement>;
+  }
+
+  export interface NavItemElem {
+    header: string;
+    subHeader: string;
+    html?: string;
+  }
 }

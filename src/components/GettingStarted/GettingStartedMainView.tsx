@@ -1,6 +1,8 @@
-import type { GettingStartedFiles } from 'custom-types';
-import { Page, PageSection, PageSidebar, TextContent } from '@patternfly/react-core';
-import { GettingStartedSideNav } from '@src/components';
+import styles from './GettingStartedMainView.module.css';
+import type { GettingStartedFiles, NavItemElem } from 'custom-types';
+import { useWindowDimensions } from '@src/util/client';
+import { Grid, GridItem, TextContent } from '@patternfly/react-core';
+import { GettingStartedTopNav, GettingStartedSideNav } from '@src/components';
 import { useState } from 'react';
 
 export interface GettingStartedMainViewProps {
@@ -10,38 +12,40 @@ export interface GettingStartedMainViewProps {
 export const GettingStartedMainView: React.FC<GettingStartedMainViewProps> = ({
   gettingStartedFiles
 }: GettingStartedMainViewProps) => {
-  const [currentPage, setCurrentPage] = useState<string>(
-    gettingStartedFiles[0].subHeaderWithHTML[0].html
-  );
+  const { width } = useWindowDimensions();
+
+  // Select the first element to display
+  const [currentPage, setCurrentPage] = useState<NavItemElem>({
+    header: gettingStartedFiles[0].header,
+    subHeader: gettingStartedFiles[0].subHeaderWithHTML[0].subHeader,
+    html: gettingStartedFiles[0].subHeaderWithHTML[0].html
+  });
   return (
-    <Page
-      sidebar={
-        <PageSidebar
-          nav={
-            <GettingStartedSideNav
-              gettingStartedFiles={gettingStartedFiles}
-              onClick={setCurrentPage}
-              currentPage={currentPage}
-            />
-          }
-        />
-      }
-    >
-      <PageSection>
+    <Grid>
+      <GridItem span={12} lg={4} xl2={3}>
+        {width! < 992 ? (
+          <GettingStartedTopNav
+            gettingStartedFiles={gettingStartedFiles}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        ) : (
+          <GettingStartedSideNav
+            gettingStartedFiles={gettingStartedFiles}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
+      </GridItem>
+      <GridItem span={12} lg={8} xl2={9}>
         <TextContent>
           <article
-            dangerouslySetInnerHTML={{ __html: currentPage }}
-            style={{
-              fontSize: 'medium',
-              fontStyle: 'normal',
-              fontWeight: 'normal',
-              textIndent: 0,
-              textTransform: 'none'
-            }}
+            dangerouslySetInnerHTML={{ __html: currentPage.html! }}
+            className={styles.article}
           ></article>
         </TextContent>
-      </PageSection>
-    </Page>
+      </GridItem>
+    </Grid>
   );
 };
 GettingStartedMainView.displayName = 'GettingStartedMainView';
