@@ -1,5 +1,6 @@
 import styles from './GettingStartedSideNav.module.css';
 import type { GettingStartedFiles, SelectedItem, NavItemElem } from 'custom-types';
+import { getHyperLink } from '@src/util/client';
 import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 
 export interface GettingStartedSideNavProps {
@@ -43,7 +44,7 @@ export const GettingStartedSideNav: React.FC<GettingStartedSideNavProps> = ({
                   key={subHeader}
                   groupId={header}
                   itemId={subHeader}
-                  to={'#' + subHeader}
+                  to={getHyperLink(header, subHeader)}
                   isActive={header === currentPage.header && subHeader === currentPage.subHeader}
                   onClick={(): void => setCurrentPage({ header, subHeader, html })}
                 >

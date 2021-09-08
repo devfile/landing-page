@@ -38,3 +38,9 @@
 .text {
   color: var(--pf-global--Color--light-200);
 }
+
+@media (max-width: 575px) {
+  .title {
+    padding-bottom: 1rem;
+  }
+}

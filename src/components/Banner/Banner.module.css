@@ -6,8 +6,20 @@
   background-color: var(--pf-global--BackgroundColor--dark-200);
 }
 
-.text {
+.headerText {
   padding: 0.5rem;
-  text-align: center;
+  text-align: left;
   color: var(--pf-global--Color--light-200);
+  border-bottom: 1px solid var(--pf-global--Color--light-200);
+}
+
+.bodyText {
+  padding: 0.5rem;
+  text-align: left;
+  color: var(--pf-global--Color--light-200);
+}
+
+.logo {
+  height: 10rem;
+  margin-right: 0.75rem;
 }

@@ -1,7 +1,8 @@
 import styles from './Banner.module.css';
 import type { LayoutText } from 'custom-types';
 import _layoutText from '@config/layout-text.json';
-import { Text, TextContent, TextVariants } from '@patternfly/react-core';
+import devfileLogo from '@public/images/devfileLogo.svg';
+import { Text, TextContent, TextVariants, Brand } from '@patternfly/react-core';
 import { useRouter } from 'next/router';
 import { Wave } from '@src/components';
 
@@ -15,11 +16,12 @@ export const Banner: React.FC = () => {
         <>
           <Wave fill="darker" backgroundColor="dark" />
           <div className={styles.banner}>
+            <Brand src={devfileLogo} alt="Devfile Registry Logo" className={styles.logo} />
             <TextContent>
-              <Text className={styles.text} component={TextVariants.h1}>
+              <Text className={styles.headerText} component={TextVariants.h1}>
                 {layoutText.bannerTitle}
               </Text>
-              <Text className={styles.text} component={TextVariants.h3}>
+              <Text className={styles.bodyText} component={TextVariants.h3}>
                 {layoutText.bannerBody}
               </Text>
             </TextContent>

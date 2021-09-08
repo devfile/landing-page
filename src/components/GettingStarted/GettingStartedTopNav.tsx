@@ -1,5 +1,6 @@
 import styles from './GettingStartedTopNav.module.css';
 import type { GettingStartedFiles, SelectedItem, NavItemElem } from 'custom-types';
+import { getHyperLink } from '@src/util/client';
 import { Nav, NavItem, NavList, NavExpandable } from '@patternfly/react-core';
 
 export interface GettingStartedTopNavProps {
@@ -44,7 +45,7 @@ export const GettingStartedTopNav: React.FC<GettingStartedTopNavProps> = ({
                   key={subHeader}
                   groupId={header}
                   itemId={subHeader}
-                  to={'#' + subHeader}
+                  to={getHyperLink(header, subHeader)}
                   isActive={header === currentPage.header && subHeader === currentPage.subHeader}
                   onClick={(): void => setCurrentPage({ header, subHeader, html })}
                 >
