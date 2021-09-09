@@ -47,6 +47,7 @@ declare module 'custom-types' {
   export interface FolderTree {
     header: string;
     subHeaders: string[];
+    folderTree: FolderTree[];
   }
 
   export interface GettingStartedFiles {

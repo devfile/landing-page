@@ -1,8 +1,7 @@
+import type { MainPageText } from 'custom-types';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { is } from 'typescript-is';
-
-import type { MainPageText } from 'custom-types';
 
 export const getMainPageText = async (): Promise<MainPageText> => {
   const mainPageTextPath = path.join(process.cwd(), 'config', 'main-page-text.json');
