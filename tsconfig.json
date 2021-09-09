@@ -36,7 +36,7 @@
     "util/server"
   ],
   "typedocOptions": {
-    "entryPoints": ["pages", "components", "@types", "util"],
+    "entryPoints": ["pages", "src"],
     "out": "docs"
   }
 }

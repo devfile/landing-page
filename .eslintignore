@@ -1,11 +1,10 @@
-.github
-.next
-.nyc_output
-coverage
-docs
-node_modules
-out
-stacks
+/.github
+/.next
+/.nyc_output
+/coverage
+/docs
+/node_modules
+/out
 
 next-env.d.ts
 
