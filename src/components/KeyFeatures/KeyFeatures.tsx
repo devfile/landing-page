@@ -1,6 +1,5 @@
 import styles from './KeyFeatures.module.css';
 import type { TextContainerArr } from 'custom-types';
-import cogIcon from '@public/images/cogs.svg';
 import {
   Brand,
   Card,
@@ -30,11 +29,11 @@ export const KeyFeatures: React.FC<KeyFeaturesProps> = ({
         <Text className={styles.headerSubText}>{keyFeaturesContainer.body}</Text>
       </TextContent>
       <Gallery hasGutter>
-        {keyFeaturesContainer.items.map(({ title, body }) => (
+        {keyFeaturesContainer.items.map(({ title, body, image }) => (
           <Card key={title}>
             <CardHeader>
               <CardHeaderMain>
-                <Brand src={cogIcon} alt="Image of a cog" className={styles.icon} />
+                <Brand src={`/images/${image}`} alt={`${title} image`} className={styles.icon} />
               </CardHeaderMain>
             </CardHeader>
             <CardTitle>{title}</CardTitle>
