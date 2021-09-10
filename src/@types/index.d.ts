@@ -30,6 +30,7 @@ declare module 'custom-types' {
   export interface TextContainer {
     title: string;
     body: string;
+    image?: string;
   }
 
   export interface TextContainerArr {
