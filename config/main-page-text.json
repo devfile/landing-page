@@ -1,6 +1,6 @@
 {
   "WhyDevfiles": {
-    "title": "Why Devfiles?",
+    "title": "Why devfiles?",
     "body": "Modern applications contain multiple components, each having a variety of technologies. Therefore, developers spend significant time configuring an environment, maintaining it, and switching among projects or branches. As a result, developers are spending a lot of their time getting a developer environment properly configured, maintaining it and switching between projects or branches.\nWhat if developer environments were treated in a declarative fashion similarly to how infrastructure is treated in DevOps, to become easily reproducible, versioned and shareable?\nWith devfiles, you define best practices for your application development lifecycle. You define these best practices as code, making it easy for you and your collaborators to contribute to projects and maintain consistency across different teams."
   },
   "ValuePropositions": {
