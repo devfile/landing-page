@@ -1,21 +1,19 @@
 import { GettingStartedMainView } from '@src/components';
-import { getGettingStartedFiles } from '@src/util/server';
+import { getMDFiles } from '@src/util/server';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 /**
  * Renders the {@link GettingStartedMainView}
  */
 const GettingStarted: React.FC<InferGetStaticPropsType<GetStaticProps>> = ({
-  gettingStartedFiles
-}: InferGetStaticPropsType<GetStaticProps>) => (
-  <GettingStartedMainView gettingStartedFiles={gettingStartedFiles} />
-);
+  mdFiles
+}: InferGetStaticPropsType<GetStaticProps>) => <GettingStartedMainView mdFiles={mdFiles} />;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const gettingStartedFiles = await getGettingStartedFiles();
+  const mdFiles = await getMDFiles('/config/getting-started');
   return {
     props: {
-      gettingStartedFiles
+      mdFiles
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

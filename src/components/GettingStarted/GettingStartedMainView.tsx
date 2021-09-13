@@ -1,37 +1,37 @@
 import styles from './GettingStartedMainView.module.css';
-import type { GettingStartedFiles, NavItemElem } from 'custom-types';
+import type { MDFiles, NavItemElem } from 'custom-types';
 import { useWindowDimensions } from '@src/util/client';
 import { Grid, GridItem, TextContent } from '@patternfly/react-core';
 import { GettingStartedTopNav, GettingStartedSideNav } from '@src/components';
 import { useState } from 'react';
 
 export interface GettingStartedMainViewProps {
-  gettingStartedFiles: GettingStartedFiles[];
+  mdFiles: MDFiles[];
 }
 
 export const GettingStartedMainView: React.FC<GettingStartedMainViewProps> = ({
-  gettingStartedFiles
+  mdFiles
 }: GettingStartedMainViewProps) => {
   const { width } = useWindowDimensions();
 
   // Select the first element to display
   const [currentPage, setCurrentPage] = useState<NavItemElem>({
-    header: gettingStartedFiles[0].header,
-    subHeader: gettingStartedFiles[0].subHeaderWithHTML[0].subHeader,
-    html: gettingStartedFiles[0].subHeaderWithHTML[0].html
+    header: mdFiles[0].header,
+    subHeader: mdFiles[0].files[0].subHeader,
+    html: mdFiles[0].files[0].html
   });
   return (
     <Grid>
       <GridItem span={12} lg={4} xl2={3}>
         {width! < 992 ? (
           <GettingStartedTopNav
-            gettingStartedFiles={gettingStartedFiles}
+            mdFiles={mdFiles}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           />
         ) : (
           <GettingStartedSideNav
-            gettingStartedFiles={gettingStartedFiles}
+            mdFiles={mdFiles}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           />
