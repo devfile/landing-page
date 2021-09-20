@@ -12,6 +12,8 @@ Start a development server with `yarn dev` or `npm run dev`.
 
 Start a production server with `yarn start` or `npm run start`.
 
+## Adding or updating information for `/getting-started`
+
 ## CI/CD
 
 [devfile/docs workflow](https://github.com/devfile/docs/blob/master/.github/workflows/main.yaml) dispatches an event to devfile/landing-page repository.

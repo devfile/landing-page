@@ -1,5 +1,5 @@
 import type { MDFiles, FolderTree } from 'custom-types';
-import { getFolderTree } from '@src/util/server';
+import { getFolderTree, formatMDFiles } from '@src/util/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 import Asciidoctor from 'asciidoctor';
@@ -14,7 +14,9 @@ export const getMDFiles = async (relPath: string): Promise<MDFiles[]> => {
 
   const mdFiles = convertFolderTreeToMD(folderTree, baseFolderPath);
 
-  return mdFiles;
+  const formattedMDFiles = formatMDFiles(mdFiles);
+
+  return formattedMDFiles;
 };
 
 export const convertFolderTreeToMD = (

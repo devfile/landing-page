@@ -51,7 +51,7 @@ const GettingStarted: React.FC<InferGetStaticPropsType<GetStaticProps>> = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const mdFiles = await getMDFiles('/config/getting-started');
+  const mdFiles = await getMDFiles('/webpage_info/getting-started');
   return {
     props: {
       mdFiles
