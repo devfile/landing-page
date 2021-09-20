@@ -9,6 +9,11 @@ export interface GettingStartedSideNavProps {
   mdFiles: MDFiles[];
 }
 
+/**
+ * Renders a {@link GettingStartedSideNav} React component.
+ * Renders a side nav if the width is less than 992px
+ * @returns `<GettingStartedSideNav gettingStartedFiles={gettingStartedFiles} currentPage={currentPage} setCurrentPage={setCurrentPage}/>`
+ */
 export const GettingStartedSideNav: React.FC<GettingStartedSideNavProps> = ({
   currentPage,
   setCurrentPage,

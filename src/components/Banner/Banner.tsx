@@ -1,6 +1,6 @@
 import styles from './Banner.module.css';
 import type { LayoutText } from 'custom-types';
-import _layoutText from '@config/layout-text.json';
+import _layoutText from '@info/layout-text.json';
 import devfileLogo from '@public/images/devfileLogo.svg';
 import { Text, TextContent, TextVariants, Brand } from '@patternfly/react-core';
 import { useRouter } from 'next/router';

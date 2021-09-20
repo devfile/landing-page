@@ -4,7 +4,7 @@ import path from 'path';
 import { is } from 'typescript-is';
 
 export const getMainPageText = async (): Promise<MainPageText> => {
-  const mainPageTextPath = path.join(process.cwd(), 'config', 'main-page-text.json');
+  const mainPageTextPath = path.join(process.cwd(), 'webpage_info', 'main-page-text.json');
   const mainPageTextUnparsed = await fs.readFile(mainPageTextPath, 'utf8');
   const mainPageText = JSON.parse(mainPageTextUnparsed) as MainPageText;
 

@@ -9,6 +9,11 @@ export interface GettingStartedTopNavProps {
   mdFiles: MDFiles[];
 }
 
+/**
+ * Renders a {@link GettingStartedTopNav} React component.
+ * Renders a top nav if the width is greater than or equal to 992px
+ * @returns `<GettingStartedTopNav gettingStartedFiles={gettingStartedFiles} currentPage={currentPage} setCurrentPage={setCurrentPage}/>`
+ */
 export const GettingStartedTopNav: React.FC<GettingStartedTopNavProps> = ({
   currentPage,
   setCurrentPage,

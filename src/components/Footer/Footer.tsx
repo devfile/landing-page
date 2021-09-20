@@ -2,7 +2,7 @@ import styles from './Footer.module.css';
 import type { LayoutText } from 'custom-types';
 import { Wave } from '@src/components';
 import devfileLogo from '@public/images/devfileLogo.svg';
-import _layoutText from '@config/layout-text.json';
+import _layoutText from '@info/layout-text.json';
 import { Grid, GridItem, Text, TextContent, TextVariants, Brand } from '@patternfly/react-core';
 
 const layoutText = _layoutText as LayoutText;
