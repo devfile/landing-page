@@ -6,6 +6,7 @@
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build",
     "dev": "next",
+    "prebuild": "node checkConfigTypes.js",
     "build": "next build && next export",
     "export": "next export",
     "start": "next start",

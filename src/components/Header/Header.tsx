@@ -1,7 +1,7 @@
 import styles from './Header.module.css';
 import type { LayoutText } from 'custom-types';
 import devfileLogo from '@public/images/devfileLogo.svg';
-import _layoutText from '@config/layout-text.json';
+import _layoutText from '@info/layout-text.json';
 import {
   Nav,
   NavItem,

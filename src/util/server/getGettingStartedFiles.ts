@@ -6,7 +6,7 @@ import Asciidoctor from 'asciidoctor';
 const asciidoctor = Asciidoctor();
 
 export const getGettingStartedFiles = async (): Promise<GettingStartedFiles[]> => {
-  const baseFolderPath = path.join(process.cwd(), 'config', 'getting-started');
+  const baseFolderPath = path.join(process.cwd(), 'webpage_info', 'getting-started');
   const headers = await fs.readdir(baseFolderPath, 'utf8');
   const folderTree: FolderTree[] = await Promise.all(
     headers.map(async (header) => {
