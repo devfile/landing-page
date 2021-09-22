@@ -51,13 +51,13 @@ declare module 'custom-types' {
     folderTree: FolderTree[];
   }
 
-  export interface MDFiles {
+  export interface MDFile {
     header: string;
     files: {
       subHeader: string;
       html: string;
     }[];
-    directories: MDFiles[];
+    directories: MDFile[];
   }
 
   export interface WindowDimensions {

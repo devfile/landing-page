@@ -1,27 +1,26 @@
-import type { MDFiles } from 'custom-types';
+import type { MDFile } from 'custom-types';
 
-export const formatMDFiles = (mdFiles: MDFiles[]): MDFiles[] => {
-  const formattedMDFiles = mdFiles.map(({ header, files, directories }) => {
-    header = checkSortCharacters(header);
-    files = files.map(({ subHeader, html }) => {
-      subHeader = checkSortCharacters(subHeader);
-      return { subHeader, html };
-    });
-    directories = formatMDFiles(directories);
+type File = MDFile['files'][0];
 
-    return { header, files, directories };
-  });
+export const formatMDFiles = (mdFiles: MDFile[]): MDFile[] =>
+  mdFiles.map((mdFile) => formatMDFile(mdFile));
 
-  return formattedMDFiles;
+/**
+ * Recursive search to remove the sorting characters before the title of a file or directory
+ */
+export const formatMDFile = ({ header, files, directories }: MDFile): MDFile => {
+  header = checkSortCharacters(header);
+  files = files.map((file) => formatFile(file));
+  directories = formatMDFiles(directories);
+  return { header, files, directories };
 };
 
-export const checkSortCharacters = (value: string): string => {
-  if (value[0] === '_') {
-    value = value.substring(1);
-  }
-  if (!isNaN(parseInt(value[0]))) {
-    value = value.substring(3);
-  }
-
-  return value;
+export const formatFile = ({ subHeader, html }: File): File => {
+  subHeader = checkSortCharacters(subHeader);
+  return { subHeader, html };
 };
+
+/**
+ * Deletes every character up to the first occurrence of a letter
+ */
+export const checkSortCharacters = (value: string): string => value.replace(/[^a-zA-Z]*/, '');

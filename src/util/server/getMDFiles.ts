@@ -1,12 +1,12 @@
-import type { MDFiles, FolderTree } from 'custom-types';
-import { getFolderTree, formatMDFiles } from '@src/util/server';
+import type { MDFile, FolderTree } from 'custom-types';
+import { getFolderTree, formatMDFiles, sortMDFiles } from '@src/util/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 import Asciidoctor from 'asciidoctor';
 
 const asciidoctor = Asciidoctor();
 
-export const getMDFiles = async (relPath: string): Promise<MDFiles[]> => {
+export const getMDFiles = async (relPath: string): Promise<MDFile[]> => {
   const splitRelPath = relPath.split('/');
   const baseFolderPath = path.join(process.cwd(), ...splitRelPath);
   const headers = await fs.readdir(baseFolderPath, 'utf8');
@@ -14,7 +14,9 @@ export const getMDFiles = async (relPath: string): Promise<MDFiles[]> => {
 
   const mdFiles = convertFolderTreeToMD(folderTree, baseFolderPath);
 
-  const formattedMDFiles = formatMDFiles(mdFiles);
+  const sortedMDFiles = sortMDFiles(mdFiles);
+
+  const formattedMDFiles = formatMDFiles(sortedMDFiles);
 
   return formattedMDFiles;
 };
@@ -22,7 +24,7 @@ export const getMDFiles = async (relPath: string): Promise<MDFiles[]> => {
 export const convertFolderTreeToMD = (
   mainFolderTree: FolderTree[],
   baseFolderPath: string
-): MDFiles[] =>
+): MDFile[] =>
   mainFolderTree.map(({ header, subHeaders, folderTree }) => {
     const files = subHeaders.map((subHeader) => {
       const filePath = path.join(baseFolderPath, header, subHeader);

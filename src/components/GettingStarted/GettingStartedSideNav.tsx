@@ -1,12 +1,12 @@
 import styles from './GettingStartedSideNav.module.css';
-import type { MDFiles, SelectedItem, NavItemElem } from 'custom-types';
+import type { MDFile, SelectedItem, NavItemElem } from 'custom-types';
 import { getHyperLink } from '@src/util/client';
 import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
 
 export interface GettingStartedSideNavProps {
   currentPage: NavItemElem;
   setCurrentPage: React.Dispatch<React.SetStateAction<NavItemElem>>;
-  mdFiles: MDFiles[];
+  mdFiles: MDFile[];
 }
 
 /**

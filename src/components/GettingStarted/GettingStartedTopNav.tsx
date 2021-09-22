@@ -1,12 +1,12 @@
 import styles from './GettingStartedTopNav.module.css';
-import type { MDFiles, SelectedItem, NavItemElem } from 'custom-types';
+import type { MDFile, SelectedItem, NavItemElem } from 'custom-types';
 import { getHyperLink } from '@src/util/client';
 import { Nav, NavItem, NavList, NavExpandable } from '@patternfly/react-core';
 
 export interface GettingStartedTopNavProps {
   currentPage: NavItemElem;
   setCurrentPage: React.Dispatch<React.SetStateAction<NavItemElem>>;
-  mdFiles: MDFiles[];
+  mdFiles: MDFile[];
 }
 
 /**
