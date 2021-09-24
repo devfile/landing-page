@@ -23,4 +23,12 @@ export const formatFile = ({ subHeader, html }: File): File => {
 /**
  * Deletes every character up to the first occurrence of a letter
  */
-export const checkSortCharacters = (value: string): string => value.replace(/[^a-zA-Z]*/, '');
+export const checkSortCharacters = (value: string): string => {
+  const newValue = value.replace(/[^a-zA-Z]*/, '');
+
+  if (!newValue) {
+    throw TypeError(`The value ${value} is not valid. There must be at least one letter.`);
+  }
+
+  return newValue;
+};
