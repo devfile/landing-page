@@ -1,0 +1,30 @@
+.container {
+  background-color: var(--pf-global--BackgroundColor--200);
+  color: var(--pf-global--Color--100);
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.galleryContainer {
+  max-width: 2350px;
+}
+
+.headerText {
+  font-size: 2rem;
+}
+
+.headerSubText {
+  color: var(--pf-global--Color--200);
+}
+
+.icon {
+  height: 5rem;
+  margin-left: 40%;
+}
+
+@media (max-width: 2400px) {
+  .galleryContainer {
+    max-width: 1280px;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Devfile.io",
+  "bannerTitle": "Devfiles",
+  "bannerBody": "An open standard defining containerized development environments that enables developer tools to simplify and accelerate workflows.",
+  "headerLinks": [
+    { "name": "Getting Started", "link": "/getting-started" },
+    { "name": "Docs", "link": "https://devfile.io/docs" },
+    { "name": "Devfile Registry", "link": "https://registry.devfile.io" }
+  ],
+  "footerLinks": [
+    { "name": "Devfile Registry", "link": "https://registry.devfile.io" },
+    { "name": "Docs", "link": "https://devfile.io/docs" },
+    { "name": "Github", "link": "https://github.com/devfile/api" }
+  ],
+  "contributorLinks": [
+    { "name": "Red Hat", "link": "https://www.redhat.com/en" },
+    { "name": "AWS", "link": "https://aws.amazon.com" },
+    { "name": "JetBrains", "link": "https://www.jetbrains.com" },
+    { "name": "IBM", "link": "https://www.ibm.com/us-en" }
+  ]
+}

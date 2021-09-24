@@ -1,0 +1,26 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 4rem;
+  background-color: var(--pf-global--BackgroundColor--dark-200);
+}
+
+.headerText {
+  padding: 0.5rem;
+  text-align: left;
+  color: var(--pf-global--Color--light-200);
+  border-bottom: 1px solid var(--pf-global--Color--light-200);
+}
+
+.bodyText {
+  padding: 0.5rem;
+  text-align: left;
+  color: var(--pf-global--Color--light-200);
+  max-width: 45rem;
+}
+
+.logo {
+  height: 10rem;
+  margin-right: 0.75rem;
+}

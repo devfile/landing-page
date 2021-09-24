@@ -1,0 +1,39 @@
+.headerText {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.bodyText {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.container {
+  background-color: var(--pf-global--BackgroundColor--200);
+  color: var(--pf-global--Color--100);
+  padding: 3rem 20rem;
+}
+
+@media (max-width: 1920px) {
+  .container {
+    padding: 3rem 12rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .container {
+    padding: 3rem 8rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 3rem 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 3rem 2rem;
+  }
+}
