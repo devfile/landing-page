@@ -8,7 +8,6 @@
 # testing
 /coverage
 .nyc_output
-/cypress
 
 # next.js
 /.next/
@@ -43,3 +42,16 @@ yarn-error.log*
 package-lock.json
 
 /docs
+/stacks
+
+#specifically dockerignore
+**/__tests__
+.vscode
+.github
+cypress
+cypress.json
+jest.config.js
+jest.setup.js
+LICENSE
+OWNERSHIP
+README.md
