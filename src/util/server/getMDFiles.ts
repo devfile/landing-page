@@ -23,7 +23,7 @@ export const getMDFiles = async (relPath: string): Promise<MDFile[]> => {
 
 export const convertFolderTreeToMD = (
   mainFolderTree: FolderTree[],
-  baseFolderPath: string
+  baseFolderPath: string,
 ): MDFile[] =>
   mainFolderTree.map(({ header, subHeaders, folderTree }) => {
     const files = subHeaders.map((subHeader) => {

@@ -7,7 +7,7 @@ export interface ValuePropositionProps {
 }
 
 export const ValuePropositions: React.FC<ValuePropositionProps> = ({
-  valuePropositionContainer
+  valuePropositionContainer,
 }: ValuePropositionProps) => (
   <Grid className={styles.grid}>
     {valuePropositionContainer.items.map(({ title, body }, index) => (

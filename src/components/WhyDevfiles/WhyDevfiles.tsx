@@ -7,7 +7,7 @@ export interface WhyDevfilesProps {
 }
 
 export const WhyDevfiles: React.FC<WhyDevfilesProps> = ({
-  whyDevfilesContainer
+  whyDevfilesContainer,
 }: WhyDevfilesProps) => (
   <div className={styles.container}>
     <TextContent>

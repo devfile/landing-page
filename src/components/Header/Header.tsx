@@ -11,7 +11,7 @@ import {
   TextVariants,
   Brand,
   Grid,
-  GridItem
+  GridItem,
 } from '@patternfly/react-core';
 import Link from 'next/link';
 
