@@ -1,4 +1,8 @@
+/* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable unicorn/prefer-module */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable global-require */
 // eslint-disable-next-line spaced-comment
 /// <reference types="cypress" />
 

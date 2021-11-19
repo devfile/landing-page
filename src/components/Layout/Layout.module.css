@@ -6,5 +6,10 @@
 
 .contentWrap {
   display: block;
+  min-height: fit-content;
   padding-bottom: 16rem;
+}
+
+.pageSection {
+  padding: 0 !important;
 }

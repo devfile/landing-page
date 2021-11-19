@@ -1,0 +1,121 @@
+body {
+  font-family: sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif !important;
+  color: black;
+}
+
+div.title {
+  font-family: sans-serif !important;
+  color: var(--pf-global--link--Color) !important;
+  font-style: normal !important;
+  font-size: 150% !important;
+}
+
+.listingblock button {
+  display: none;
+  color: rgb(165, 173, 180);
+  box-sizing: border-box;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 5px 10px;
+  font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 0.15rem;
+}
+
+.listingblock:hover button {
+  display: block;
+}
+
+.listingblock button:hover {
+  color: rgb(112, 117, 121);
+  background: rgba(0, 0, 0, 0.2);
+}
+.listingblock button:active {
+  color: var(--pf-global--link--Color);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background: #222;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+pre.highlight {
+  width: 100%;
+  position: relative;
+  border-radius: 0.2rem;
+  padding: 10px;
+  margin: 1.5rem 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+div.exampleblock > div.content {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.highlight pre {
+  background: #282c34;
+}
+
+pre.highlight {
+  margin: 0;
+}
+
+.highlight,
+pre.highlight {
+  background: #282c34;
+  color: #abb2bf;
+}
+
+.listingblock code[data-lang]::before {
+  display: none;
+  content: attr(data-lang);
+  position: absolute;
+  font-size: 0.75em;
+  top: 0.5rem;
+  right: 3.5rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: inherit;
+  opacity: 0.5;
+}
+
+.listingblock:hover code[data-lang]::before {
+  display: block;
+}
+
+p > code,
+div > code,
+dl > dt > code {
+  background: var(--pf-global--BackgroundColor--100) !important;
+}
+
+.hljs {
+  background: #f7f7f8 !important;
+}
+
+ul > li {
+  list-style-type: square;
+}

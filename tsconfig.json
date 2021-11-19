@@ -20,9 +20,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "noImplicitAny": true,
-    "typeRoots": ["@types", "node_modules/@types"],
+    "typeRoots": ["src/@types", "node_modules/@types"],
     "types": ["node"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**.*.js", "**.*.jsx", "**/*.ts", "**/*.tsx", "**/*.json"],
   "exclude": [

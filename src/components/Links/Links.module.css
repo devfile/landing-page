@@ -1,0 +1,35 @@
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  text-decoration-color: var(--pf-global--info-color--100);
+  text-decoration-thickness: 0.2rem;
+}
+
+.footerLink {
+  text-decoration: none;
+}
+
+.lightText {
+  color: var(--pf-global--Color--light-200);
+  font-size: var(--pf-global--FontSize--xl);
+}
+
+.darkText {
+  color: var(--pf-global--Color--100);
+  font-size: var(--pf-global--FontSize--xl);
+}
+
+.blueText {
+  color: var(--pf-global--link--Color);
+  font-size: 85%;
+}
+
+.lightText,
+.darkText,
+.blueText {
+  margin: 0;
+}

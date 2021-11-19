@@ -1,40 +1,61 @@
-// Patternfly import needs to be first or the css will not be imported
 import '@patternfly/react-core/dist/styles/base.css';
+import 'highlight.js/styles/stackoverflow-light.css';
+import '@asciidoctor/core/dist/css/asciidoctor.css';
+import '@src/styles/globals.css';
+import type { NextPage } from 'next';
+import type { GetConfig } from 'custom-types';
 import { Layout } from '@src/components';
-import { getAnalytics, getUserRegion } from '@src/util/client';
+import { useAnalytics, getUserRegion } from '@src/util/client';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { NextPage } from 'next';
 import { useEffect } from 'react';
 import getConfig from 'next/config';
 
 /**
  * Renders the {@link MyApp}
  */
-const MyApp: NextPage<AppProps> = ({ Component, pageProps }: AppProps) => {
+const MyApp: NextPage<AppProps> = (props: AppProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const { Component, pageProps } = props;
+
   const router = useRouter();
+  const analytics = useAnalytics();
 
   // Client renders page
   useEffect(() => {
-    const analytics = getAnalytics();
-    const region = getUserRegion(router.locale);
-    const { publicRuntimeConfig } = getConfig();
-
-    // Match url upto #
-    const path = router.asPath.match(/[^#]*/)![0];
-
     if (analytics) {
-      analytics.page({
-        userId: publicRuntimeConfig.segmentUserId,
-        name: path,
-        context: { ip: '0.0.0.0', location: { country: region } },
-      });
+      const region = getUserRegion(router.locale);
+      const { publicRuntimeConfig } = getConfig() as GetConfig;
+      const anonymousId = analytics.user().anonymousId();
+
+      analytics
+        .identify(
+          anonymousId,
+          {
+            id: anonymousId,
+          },
+          {
+            context: { ip: '0.0.0.0', location: { country: region } },
+          },
+        )
+        .catch(() => {});
+
+      analytics
+        .track(
+          router.asPath,
+          { client: publicRuntimeConfig.segmentClientId },
+          {
+            context: { ip: '0.0.0.0', location: { country: region } },
+            userId: anonymousId,
+          },
+        )
+        .catch(() => {});
     }
-  }, [router.asPath, router.locale]);
+  }, [analytics, router.asPath, router.locale]);
 
   return (
     <Layout>
-      <Component {...pageProps} />
+      <Component {...pageProps} analytics={analytics} />
     </Layout>
   );
 };

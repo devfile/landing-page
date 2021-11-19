@@ -1,5 +1,4 @@
-import styles from './KeyFeatures.module.css';
-import type { TextContainerArr } from 'custom-types';
+import type { TextContainerArr, DefaultProps } from 'custom-types';
 import {
   Brand,
   Card,
@@ -12,36 +11,43 @@ import {
   TextContent,
   TextVariants,
 } from '@patternfly/react-core';
+import styles from './KeyFeatures.module.css';
 
-export interface KeyFeaturesProps {
-  keyFeaturesContainer: TextContainerArr;
+export interface KeyFeaturesProps extends DefaultProps {
+  keyFeatures: TextContainerArr;
 }
 
-export const KeyFeatures: React.FC<KeyFeaturesProps> = ({
-  keyFeaturesContainer,
-}: KeyFeaturesProps) => (
-  <div className={styles.container}>
-    <div className={styles.galleryContainer}>
-      <TextContent>
-        <Text component={TextVariants.h1} className={styles.headerText}>
-          {keyFeaturesContainer.title}
-        </Text>
-        <Text className={styles.headerSubText}>{keyFeaturesContainer.body}</Text>
-      </TextContent>
-      <Gallery hasGutter>
-        {keyFeaturesContainer.items.map(({ title, body, image }) => (
-          <Card key={title}>
-            <CardHeader>
-              <CardHeaderMain>
-                <Brand src={`/images/${image}`} alt={`${title} image`} className={styles.icon} />
-              </CardHeaderMain>
-            </CardHeader>
-            <CardTitle>{title}</CardTitle>
-            <CardBody>{body}</CardBody>
-          </Card>
-        ))}
-      </Gallery>
+export const KeyFeatures: React.FC<KeyFeaturesProps> = (props: KeyFeaturesProps) => {
+  const { keyFeatures } = props;
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.galleryContainer}>
+        <TextContent>
+          <Text component={TextVariants.h1} className={styles.headerText}>
+            {keyFeatures.title}
+          </Text>
+          <Text className={styles.headerSubText}>{keyFeatures.body}</Text>
+        </TextContent>
+        <Gallery hasGutter>
+          {keyFeatures.items.map(({ title, body, image }) => (
+            <Card key={title}>
+              <CardHeader>
+                <CardHeaderMain>
+                  <Brand
+                    src={`/images/${image ?? ''}`}
+                    alt={`${title} image`}
+                    className={styles.icon}
+                  />
+                </CardHeaderMain>
+              </CardHeader>
+              <CardTitle>{title}</CardTitle>
+              <CardBody>{body}</CardBody>
+            </Card>
+          ))}
+        </Gallery>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 KeyFeatures.displayName = 'KeyFeatures';
