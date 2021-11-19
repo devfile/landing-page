@@ -11,14 +11,14 @@ import {
   TextVariants,
   Brand,
   Grid,
-  GridItem
+  GridItem,
 } from '@patternfly/react-core';
 import Link from 'next/link';
 
 const layoutText = _layoutText as LayoutText;
 
 export const Header: React.FC = () => (
-  <header>
+  <header data-testid="component-header">
     <Grid className={styles.nav}>
       <GridItem span={12} sm={6}>
         <Link href="/">

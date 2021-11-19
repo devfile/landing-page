@@ -9,7 +9,7 @@ import { Stack, StackItem } from '@patternfly/react-core';
  */
 
 const HomePage: React.FC<InferGetStaticPropsType<GetStaticProps>> = ({
-  mainPageText
+  mainPageText,
 }: InferGetStaticPropsType<GetStaticProps>) => (
   <div>
     <Stack>
@@ -33,12 +33,12 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      mainPageText
+      mainPageText,
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 15 seconds
-    revalidate: 15
+    revalidate: 15,
   };
 };
 

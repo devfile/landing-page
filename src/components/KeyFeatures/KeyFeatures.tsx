@@ -10,7 +10,7 @@ import {
   Gallery,
   Text,
   TextContent,
-  TextVariants
+  TextVariants,
 } from '@patternfly/react-core';
 
 export interface KeyFeaturesProps {
@@ -18,7 +18,7 @@ export interface KeyFeaturesProps {
 }
 
 export const KeyFeatures: React.FC<KeyFeaturesProps> = ({
-  keyFeaturesContainer
+  keyFeaturesContainer,
 }: KeyFeaturesProps) => (
   <div className={styles.container}>
     <div className={styles.galleryContainer}>

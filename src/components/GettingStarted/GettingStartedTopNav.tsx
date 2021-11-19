@@ -1,12 +1,13 @@
 import styles from './GettingStartedTopNav.module.css';
-import type { MDFile, SelectedItem, NavItemElem } from 'custom-types';
-import { getHyperLink } from '@src/util/client';
+import type { CurrentPageState, CurrentPageAction, SelectedItem } from 'custom-types';
+import { createHyperLink, getAnalytics, getUserRegion } from '@src/util/client';
 import { Nav, NavItem, NavList, NavExpandable } from '@patternfly/react-core';
+import { useRouter } from 'next/router';
+import getConfig from 'next/config';
 
 export interface GettingStartedTopNavProps {
-  currentPage: NavItemElem;
-  setCurrentPage: React.Dispatch<React.SetStateAction<NavItemElem>>;
-  mdFiles: MDFile[];
+  currentPageState: CurrentPageState;
+  currentPageDispatch: React.Dispatch<CurrentPageAction>;
 }
 
 /**
@@ -15,43 +16,56 @@ export interface GettingStartedTopNavProps {
  * @returns `<GettingStartedTopNav gettingStartedFiles={gettingStartedFiles} currentPage={currentPage} setCurrentPage={setCurrentPage}/>`
  */
 export const GettingStartedTopNav: React.FC<GettingStartedTopNavProps> = ({
-  currentPage,
-  setCurrentPage,
-  mdFiles
+  currentPageState,
+  currentPageDispatch,
 }: GettingStartedTopNavProps) => {
+  const router = useRouter();
+
   const onSelect = (result: SelectedItem): void => {
-    const headerItem = result.groupId as string;
-    const subHeaderItem = result.itemId as string;
-    const htmlItem = mdFiles.find(({ header, files }) => {
-      headerItem === header && files.find(({ subHeader }) => subHeaderItem === subHeader);
-    });
-    setCurrentPage(() => ({
-      header: headerItem,
-      subHeader: subHeaderItem,
-      html: htmlItem?.files[0].html
-    }));
+    const header = result.groupId as string;
+    const subHeader = result.itemId as string;
+
+    currentPageDispatch({ payload: { header, subHeader } });
+
+    const analytics = getAnalytics();
+    const region = getUserRegion(router.locale);
+    const { publicRuntimeConfig } = getConfig();
+
+    if (analytics) {
+      analytics.track({
+        userId: publicRuntimeConfig.segmentUserId,
+        event: 'Getting Started Clicked',
+        properties: {
+          header,
+          subHeader,
+        },
+        context: { ip: '0.0.0.0', location: { country: region } },
+      });
+    }
   };
 
   return (
     <Nav onSelect={onSelect} variant="horizontal" className={styles.nav}>
       <NavList>
-        {mdFiles.map(({ header, files }) => (
+        {currentPageState.mdFiles.map(({ header, files }) => (
           <div key={header} className={styles.navContainer}>
             <NavExpandable
               // @ts-expect-error Does not support span
               title={<span className={styles.title}>{header}</span>}
               key={header}
-              isActive={header === currentPage.header}
+              isActive={header === currentPageState.currentPage.header}
               className={styles.navExpandable}
             >
-              {files.map(({ subHeader, html }) => (
+              {files.map(({ subHeader }) => (
                 <NavItem
                   key={subHeader}
                   groupId={header}
                   itemId={subHeader}
-                  to={getHyperLink(header, subHeader)}
-                  isActive={header === currentPage.header && subHeader === currentPage.subHeader}
-                  onClick={(): void => setCurrentPage({ header, subHeader, html })}
+                  to={createHyperLink(header, subHeader)}
+                  isActive={
+                    header === currentPageState.currentPage.header &&
+                    subHeader === currentPageState.currentPage.subHeader
+                  }
                 >
                   {subHeader}
                 </NavItem>

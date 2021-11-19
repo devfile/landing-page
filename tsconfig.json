@@ -33,7 +33,7 @@
     "docs",
     "node_modules",
     "out",
-    "util/server"
+    "src/util/server"
   ],
   "typedocOptions": {
     "entryPoints": ["pages", "src"],

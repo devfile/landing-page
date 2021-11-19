@@ -1,14 +1,15 @@
 name: Cypress
 
-# Triggers the workflow on push or pull request events but only for the main branch
 on:
-  push:
+  push: 
     branches: [main]
   pull_request:
     branches: [main]
 
 jobs:
   cypress-run:
+    name: Cypress
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

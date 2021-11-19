@@ -72,9 +72,22 @@ declare module 'custom-types' {
     event: React.FormEvent<HTMLInputElement>;
   }
 
-  export interface NavItemElem {
+  export interface PageElem {
     header: string;
     subHeader: string;
-    html?: string;
+    html: string;
+  }
+
+  export interface PublicRuntimeConfig {
+    analyticsWriteKey: string;
+  }
+
+  export interface CurrentPageAction {
+    payload: Omit<PageElem, 'html'>;
+  }
+
+  export interface CurrentPageState {
+    currentPage: PageElem;
+    mdFiles: MDFile[];
   }
 }

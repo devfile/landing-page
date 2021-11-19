@@ -16,7 +16,7 @@ const basePath = process.env.DEVFILE_VIEWER_ROOT ? process.env.DEVFILE_VIEWER_RO
 export const Meta: React.FC<MetaProps> = ({
   title,
   keywords,
-  description
+  description,
 }: MetaProps): React.ReactElement => (
   <Head>
     <title>{title}</title>
@@ -40,5 +40,5 @@ Meta.displayName = 'Meta';
 Meta.defaultProps = {
   title: 'Devfile',
   keywords: 'Devfile, OpenShift, Kubernetes',
-  description: 'Devfile Landing Page'
+  description: 'Devfile Landing Page',
 };

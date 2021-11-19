@@ -11,11 +11,11 @@ export const sortMDFiles = (mdFiles: MDFile[]): MDFile[] =>
     sortMDFiles(mdFileB.directories);
 
     return mdFileA.header.localeCompare(mdFileB.header, 'en', {
-      sensitivity: 'accent'
+      sensitivity: 'accent',
     });
   });
 
 export const compareSubHeaders = (a: File, b: File): number =>
   a.subHeader.localeCompare(b.subHeader, 'en', {
-    sensitivity: 'accent'
+    sensitivity: 'accent',
   });

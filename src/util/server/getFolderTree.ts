@@ -8,7 +8,7 @@ import path from 'path';
  */
 export const getFolderTree = async (
   baseFolderPath: string,
-  headers: string[]
+  headers: string[],
 ): Promise<FolderTree[]> =>
   await Promise.all(
     headers.map(async (header) => {
@@ -17,11 +17,11 @@ export const getFolderTree = async (
 
       const { subHeaders, folderTree } = await getSubFolderTreeAndHeaders(
         folderObjects,
-        folderPath
+        folderPath,
       );
 
       return { header, subHeaders, folderTree };
-    })
+    }),
   );
 
 /**
@@ -29,7 +29,7 @@ export const getFolderTree = async (
  */
 export const getSubFolderTreeAndHeaders = async (
   folderObjects: string[],
-  folderPath: string
+  folderPath: string,
 ): Promise<Omit<FolderTree, 'header'>> =>
   await folderObjects.reduce(async (promise, folderObject) => {
     const { subHeaders, folderTree } = await promise;
