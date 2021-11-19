@@ -1,26 +1,28 @@
 import { FolderTree } from 'custom-types';
-import { promises as fs } from 'fs';
-import type { Stats } from 'fs';
-import path from 'path';
+import { promises as fs } from 'node:fs';
+import type { Stats } from 'node:fs';
+import path from 'node:path';
+import { FSTypes } from '@src/enums';
 
 /**
  * Recursive search to go through the file system to find all folders and files given a starting directory
  */
-export const getFolderTree = async (
-  baseFolderPath: string,
-  headers: string[],
-): Promise<FolderTree[]> =>
-  await Promise.all(
+export const getFolderTree = async (_path: string, headers: string[]): Promise<FolderTree[]> =>
+  Promise.all(
     headers.map(async (header) => {
-      const folderPath = path.join(baseFolderPath, header);
-      const folderObjects = await fs.readdir(folderPath, 'utf8');
+      const folderTree: FolderTree = {
+        header,
+        children: [],
+      };
 
-      const { subHeaders, folderTree } = await getSubFolderTreeAndHeaders(
-        folderObjects,
-        folderPath,
-      );
+      const basePath = path.join(_path, header);
+      const folderTreeChildren = await fs.readdir(basePath, 'utf8');
 
-      return { header, subHeaders, folderTree };
+      folderTree.children =
+        // eslint-disable-next-line unicorn/no-await-expression-member
+        (await getSubFolderTreeAndHeaders(basePath, folderTreeChildren)).children;
+
+      return folderTree;
     }),
   );
 
@@ -28,31 +30,32 @@ export const getFolderTree = async (
  * Goes through each header and and pushes each object to the corresponding array i.e. file or directory
  */
 export const getSubFolderTreeAndHeaders = async (
-  folderObjects: string[],
-  folderPath: string,
+  basePath: string,
+  folderTreeChildren: string[],
 ): Promise<Omit<FolderTree, 'header'>> =>
-  await folderObjects.reduce(async (promise, folderObject) => {
-    const { subHeaders, folderTree } = await promise;
+  folderTreeChildren.reduce(async (promise, folderTreeChild) => {
+    const folderTree = await promise;
 
-    const stats = await getStats(folderPath, folderObject);
+    const stats = await getStats(basePath, folderTreeChild);
 
     if (stats.isDirectory()) {
-      const subFolderTree = await getFolderTree(folderPath, [folderObject]);
-      folderTree.push(...subFolderTree);
+      const subFolderTree = await getFolderTree(basePath, [folderTreeChild]);
+      // Only 1 element is returned
+      folderTree.children.push({ type: FSTypes.DIRECTORY, container: subFolderTree[0] });
     }
 
     if (stats.isFile()) {
-      subHeaders.push(folderObject);
+      folderTree.children.push({ type: FSTypes.FILE, container: folderTreeChild });
     }
 
-    return { subHeaders, folderTree };
-  }, Promise.resolve({ subHeaders: [], folderTree: [] } as Omit<FolderTree, 'header'>));
+    return { children: folderTree.children };
+  }, Promise.resolve({ children: [] } as Omit<FolderTree, 'header'>));
 
 /**
  * Gets the stats of the object i.e. whether its a file or directory
  */
-export const getStats = async (folderPath: string, folderObject: string): Promise<Stats> => {
-  const folderSubPath = path.join(folderPath, folderObject);
+export const getStats = async (basePath: string, folderTreeChild: string): Promise<Stats> => {
+  const folderSubPath = path.join(basePath, folderTreeChild);
   const stats = await fs.lstat(folderSubPath);
 
   return stats;

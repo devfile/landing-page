@@ -1,0 +1,39 @@
+div.transformX {
+  transform: scaleX(-1);
+}
+
+div.transformY {
+  transform: rotate(180deg);
+}
+
+div.lighterBackground {
+  background: var(--pf-global--BackgroundColor--100);
+}
+
+div.lightBackground {
+  background: var(--pf-global--BackgroundColor--200);
+}
+
+div.darkBackground {
+  background: var(--pf-global--BackgroundColor--dark-200);
+}
+
+div.darkerBackground {
+  background: var(--pf-global--BackgroundColor--dark-100);
+}
+
+div > svg > path.lighterFill {
+  fill: var(--pf-global--BackgroundColor--100);
+}
+
+div > svg > path.lightFill {
+  fill: var(--pf-global--BackgroundColor--200);
+}
+
+div > svg > path.darkFill {
+  fill: var(--pf-global--BackgroundColor--dark-200);
+}
+
+div > svg > path.darkerFill {
+  fill: var(--pf-global--BackgroundColor--dark-100);
+}

@@ -4,14 +4,13 @@
 export {};
 
 describe('Testing links on the home page', () => {
+  beforeEach(() => {
+    // run these tests as if in a desktop
+    // browser with a 720p monitor
+    cy.viewport(1280, 720);
+  });
+
   it('successfully loads', () => {
     cy.visit('/'); // change URL to match your dev URL
-  });
-  it('site navigation works', () => {
-    cy.contains('Getting Started').click();
-    cy.url().should('include', '/getting-started');
-
-    cy.get('[data-testid=go-home-button]').click();
-    cy.url().should('eq', Cypress.config().baseUrl);
   });
 });
