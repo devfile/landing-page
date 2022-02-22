@@ -27,21 +27,13 @@ jobs:
         run: yarn build
 
       # Docs repo
-      - name: Checkout docs
+      - name: Checkout docs build in publication branch
         uses: actions/checkout@v2
         with:
           repository: devfile/docs
+          ref: publication
           persist-credentials: false
-          path: docs
-
-      - name: Install docs deps
-        run: yarn --cwd ./docs install
-      - name: Generate docs api references
-        run: yarn --cwd ./docs generate-api-reference
-      - name: Build docs site with antora
-        uses: kameshsampath/antora-site-action@master
-        with:
-          antora_playbook: docs/antora-playbook.yml
+          path: out/docs
 
       # Deploy built landing page and docs site
       - name: Deploy
