@@ -20,7 +20,7 @@ module.exports = withPlugins([withTM, withImages], {
     });
     return config;
   },
-  basePath: process.env.LANDING_PAGE_ROOT ? process.env.LANDING_PAGE_ROOT : '',
+  basePath: process.env.NEXT_BASE_PATH || '',
   publicRuntimeConfig: {
     analyticsWriteKey: process.env.ANALYTICS_WRITE_KEY || '',
     segmentClientId: 'landing-page',
