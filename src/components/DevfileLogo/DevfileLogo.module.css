@@ -1,0 +1,22 @@
+.titleLink {
+  text-decoration: none;
+  outline: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 3rem;
+  margin-right: 0.75rem;
+}
+
+.lightText {
+  color: var(--pf-global--Color--light-200);
+}
+
+.darkText {
+  color: var(--pf-global--Color--100);
+}

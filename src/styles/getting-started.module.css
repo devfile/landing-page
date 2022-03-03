@@ -1,7 +1,8 @@
-.article {
-  font-size: medium;
-  font-style: normal;
-  font-weight: normal;
-  text-indent: 0;
-  text-transform: none;
+div.container {
+  display: flex;
+  margin: 1rem 5% 1rem 2%;
+}
+
+article.article {
+  margin-left: 2rem;
 }

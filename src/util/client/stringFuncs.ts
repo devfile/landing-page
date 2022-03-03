@@ -1,51 +1,71 @@
-import { PageElem } from 'custom-types';
+import type { Heading } from 'custom-types';
 
 /**
- * Creates hyper link for a PageElem
+ * Creates an href for an anchor element
  *
- * @param header - the header for the PageElem
- * @param subHeader - the subheader for the PageElem
- * @returns a hyper link for the navigation bar
+ * @param headings - the headings for the PageElem
+ * @returns a hyper link
  */
-export const createHyperLink = (header: string, subHeader: string): string => {
-  // Regex for finding +
-  const regexForPlus = new RegExp(/\+/g);
+export const createAnchor = (headings: Heading[]): string => {
+  if (headings.length === 0) {
+    return '';
+  }
 
-  let newHeader = header.replace(regexForPlus, '');
-  let newSubHeader = subHeader.replace(regexForPlus, '');
+  const compressedHeadings = headings.map(({ header }) => header);
+  compressedHeadings.push(headings[headings.length - 1].subHeader);
+
+  // Regex for finding + or #
+  const specialCharRegex = /\+|#/g;
 
   // Regex for finding spaces
-  const regexForSpace = new RegExp(/ /g);
+  const spaceRegex = / /g;
 
-  newHeader = header.replace(regexForSpace, '_');
-  newSubHeader = subHeader.replace(regexForSpace, '_');
+  const sanitizedHeadings = compressedHeadings.map((heading) => {
+    let newHeading = heading.replace(specialCharRegex, '');
 
-  return `#${newHeader}+${newSubHeader}`;
+    newHeading = newHeading.replace(spaceRegex, '_');
+
+    return newHeading;
+  });
+
+  return `#${sanitizedHeadings.join('+')}`;
 };
 
 /**
- * Parse a link for the header and subheader
+ * Parses an anchor from a url
  *
  * @param link - the link to parse
- * @returns an object containing header and subHeader
+ * @returns an array of Headings
  */
-export const parseLink = (link: string): Omit<PageElem, 'html'> => {
-  const headerMatches = link.match(/(?<=#).*(?=\+)/);
-  const subHeaderMatches = link.match(/[^+]*$/);
+export const parseAnchor = (link: string): Heading[] => {
+  // Matches everything after #
+  const anchor = link.match(/(?<=#).*/);
 
-  if (headerMatches?.length && subHeaderMatches?.length) {
-    // Return the first match for header and subHeader
-    let header = headerMatches[0];
-    let subHeader = subHeaderMatches[0];
-
-    // Regex for finding _
-    const regexForUnderscore = new RegExp(/_/g);
-
-    header = header.replace(regexForUnderscore, ' ');
-    subHeader = subHeader.replace(regexForUnderscore, ' ');
-
-    return { header, subHeader };
+  if (!anchor?.length) {
+    return [];
   }
 
-  return { header: '', subHeader: '' };
+  const splitHeadings = anchor[0].split('+');
+
+  // Regex for finding _
+  const underscoreRegex = /_/g;
+
+  const compressedHeadings = splitHeadings.map((str) => str.replace(underscoreRegex, ' '));
+
+  const headings: Heading[] = compressedHeadings.reduce((headingsAccumulator, str, index) => {
+    const newHeadings = headingsAccumulator;
+
+    if (newHeadings.length === 0) {
+      newHeadings.push({ header: str, subHeader: '' });
+    } else if (compressedHeadings.length - 1 === index) {
+      newHeadings[newHeadings.length - 1].subHeader = str;
+    } else {
+      newHeadings[newHeadings.length - 1].subHeader = str;
+      newHeadings.push({ header: str, subHeader: '' });
+    }
+
+    return newHeadings;
+  }, [] as Heading[]);
+
+  return headings;
 };

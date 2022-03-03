@@ -1,45 +1,28 @@
-import { MainPageText } from 'custom-types';
-import { ValuePropositions, WhyDevfiles, KeyFeatures } from '@src/components';
-import { getMainPageText } from '@src/util/server';
-import { InferGetStaticPropsType, GetStaticProps } from 'next';
+import { DefaultProps } from 'custom-types';
+import mainPage from '@info/mainPage';
+import type { NextPage } from 'next';
+import { ValuePropositions, WhyDevfiles, KeyFeatures, Banner, Header } from '@src/components';
 import { Stack, StackItem } from '@patternfly/react-core';
 
-/**
- * Renders the {@link HomePage}
- */
+export type HomePageProps = DefaultProps;
 
-const HomePage: React.FC<InferGetStaticPropsType<GetStaticProps>> = ({
-  mainPageText,
-}: InferGetStaticPropsType<GetStaticProps>) => (
-  <div>
+const Home: NextPage<HomePageProps> = () => (
+  <>
+    <Header>
+      <Banner />
+    </Header>
     <Stack>
       <StackItem isFilled>
-        <WhyDevfiles whyDevfilesContainer={(mainPageText as MainPageText).WhyDevfiles} />
+        <WhyDevfiles whyDevfiles={mainPage.WhyDevfiles} />
       </StackItem>
       <StackItem isFilled>
-        <ValuePropositions
-          valuePropositionContainer={(mainPageText as MainPageText).ValuePropositions}
-        />
+        <ValuePropositions valueProposition={mainPage.ValuePropositions} />
       </StackItem>
       <StackItem isFilled>
-        <KeyFeatures keyFeaturesContainer={(mainPageText as MainPageText).KeyFeatures} />
+        <KeyFeatures keyFeatures={mainPage.KeyFeatures} />
       </StackItem>
     </Stack>
-  </div>
+  </>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
-  const mainPageText = await getMainPageText();
-
-  return {
-    props: {
-      mainPageText,
-    },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 15 seconds
-    revalidate: 15,
-  };
-};
-
-export default HomePage;
+export default Home;

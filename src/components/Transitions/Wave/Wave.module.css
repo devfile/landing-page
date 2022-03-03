@@ -1,12 +1,11 @@
-.wave {
+div.wave {
   position: relative;
-  margin-top: -2rem;
   width: 100%;
   overflow: hidden;
   line-height: 0;
 }
 
-.wave svg {
+div.wave > svg {
   position: relative;
   display: block;
   width: calc(225% + 1.3px);

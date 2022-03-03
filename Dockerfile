@@ -6,6 +6,7 @@ USER root
 WORKDIR /app
 RUN npm install -g yarn
 COPY . .
+RUN $(npm get prefix)/bin/yarn add -D @swc/cli @swc/core
 RUN $(npm get prefix)/bin/yarn install --frozen-lockfile --ignore-optional
 RUN $(npm get prefix)/bin/yarn build
 RUN $(npm get prefix)/bin/yarn install --production --ignore-scripts --prefer-offline --ignore-optional
