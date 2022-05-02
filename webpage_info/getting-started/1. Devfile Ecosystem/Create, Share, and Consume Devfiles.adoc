@@ -22,13 +22,13 @@ If an organization wants to keep their own devfiles private but wishes to share 
 
 === *Consume*
 
-Developers can use the supported tools*^*^* to access devfiles.  Many of the existing tools offer a way to register or catalog public and private devfile registries which then allows the tool to expose the devfiles for development.
+Developers can use the supported tools^*^ to access devfiles.  Many of the existing tools offer a way to register or catalog public and private devfile registries which then allows the tool to expose the devfiles for development.
 
 In addition, each registry comes packaged with an index server and a registry viewer so developers can browse and view the devfile contents before deciding which ones they want to adopt.
 
 Developers can also extend an existing parent devfile to customize the workflow of their specific application. The devfile can be packaged as part of the application source to ensure consistent behaviour when moving across different tools.
 
 
-*^*^* _Tools that support the devfile spec may have varying levels of support.  Check their product pages for more information._
+^*^ _Tools that support the devfile spec may have varying levels of support.  Check their product pages for more information._
 
 
