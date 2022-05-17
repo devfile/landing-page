@@ -10,3 +10,4 @@ export * from './NavBar';
 export * from './Transitions';
 export * from './ValueProposition';
 export * from './WhyDevfiles';
+export * from './GifPlayer';
