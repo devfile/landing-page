@@ -1,5 +1,6 @@
 import { TextContainer } from 'custom-types';
 import { Text, TextContent, TextVariants } from '@patternfly/react-core';
+import { GifPlayer } from '@src/components';
 import styles from './WhyDevfiles.module.css';
 
 export interface WhyDevfilesProps {
@@ -18,6 +19,10 @@ export const WhyDevfiles: React.FC<WhyDevfilesProps> = (props: WhyDevfilesProps)
         <Text className={styles.bodyText}>{whyDevfiles.body}</Text>
       </TextContent>
       <br />
+      <GifPlayer
+        style={{ width: '700px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+        src="images/demo.gif"
+      />
     </div>
   );
 };
