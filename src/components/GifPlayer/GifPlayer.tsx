@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 
 export interface GifPlayerProps
   extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
-  src?: string;
+  src: string;
 
   className?: string;
 
@@ -10,14 +10,8 @@ export interface GifPlayerProps
 }
 
 export const GifPlayer: React.FC<GifPlayerProps> = ({
+  src,
   className = '',
-  src = '',
   alt = 'loading...',
   ...props
-}: GifPlayerProps) => {
-  return (
-    <>
-      <img {...props} className={className} src={src} alt={alt} />
-    </>
-  );
-};
+}: GifPlayerProps) => <img {...props} className={className} src={src} alt={alt} />;

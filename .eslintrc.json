@@ -82,7 +82,9 @@
     // It's not accurate in the monorepo style
     "import/no-extraneous-dependencies": "off",
     // Import for import of components
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    // Disables the no img tag rule
+    "@next/next/no-img-element": "off"
   },
   "overrides": [
     {

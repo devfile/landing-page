@@ -19,10 +19,7 @@ export const WhyDevfiles: React.FC<WhyDevfilesProps> = (props: WhyDevfilesProps)
         <Text className={styles.bodyText}>{whyDevfiles.body}</Text>
       </TextContent>
       <br />
-      <GifPlayer
-        style={{ width: '700px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
-        src="images/demo.gif"
-      />
+      <GifPlayer width="1920px" height="1080px" src="/images/demo.gif" />
     </div>
   );
 };
