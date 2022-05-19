@@ -1,4 +1,6 @@
 import React from 'react';
+import { Card } from '@patternfly/react-core';
+import styles from './GifPlayer.module.css';
 
 export interface GifPlayerProps
   extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
@@ -14,4 +16,8 @@ export const GifPlayer: React.FC<GifPlayerProps> = ({
   className = '',
   alt = 'loading...',
   ...props
-}: GifPlayerProps) => <img {...props} className={className} src={src} alt={alt} />;
+}: GifPlayerProps) => (
+  <Card className={styles.container}>
+    <img {...props} className={className} src={src} alt={alt} />
+  </Card>
+);
