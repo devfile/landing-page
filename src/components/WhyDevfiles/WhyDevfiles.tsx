@@ -14,8 +14,8 @@ export const WhyDevfiles: React.FC<WhyDevfilesProps> = (props: WhyDevfilesProps)
   const { height, width } = useWindowDimensions();
   const demoFile =
     width !== undefined && height !== undefined && Math.min(height, width) < minDemoSize
-      ? '/images/demo.png'
-      : '/images/demo.gif';
+      ? '/images/devfileDemo.png'
+      : '/images/devfileDemo.gif';
 
   return (
     <div className={styles.container}>
