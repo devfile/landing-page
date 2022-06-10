@@ -40,7 +40,7 @@
     "tslib": "^2.3.1",
     "typescript-is": "^0.19.0"
   },
-  "license": "EPL-2.0",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/jsdom": "^16.2.14",
     "@types/node": "^17.0.8",
