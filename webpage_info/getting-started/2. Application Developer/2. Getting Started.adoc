@@ -2,8 +2,7 @@
 
 '''''
 
-*https://docs.devfile.io/devfile/2.1.0/user-guide/api-reference.html[Devfile
-specification]*
+*https://docs.devfile.io/devfile/2.1.0/user-guide/api-reference/[Devfile specification]*
 
 *Tools that provides devfile support:*
 
