@@ -25,3 +25,11 @@ The directory `getting-started` represents the navigation in the Getting Started
 [devfile/docs workflow](https://github.com/devfile/docs/blob/master/.github/workflows/main.yaml) dispatches an event to devfile/landing-page repository.
 
 [devfile/landing-page workflow](./.github/workflows/BuildAndDeploy.yaml) receives the event and triggers its job. After building the landing-page & docs, the workflow deploys the built site to [devfile/devfile.github.io](https://github.com/devfile/devfile.github.io) which hosts the github pages at https://devfile.github.io.
+
+## Contributing
+
+Please see our [contributing.md](./CONTRIBUTING.md).
+
+## License
+
+Apache License 2.0, see [LICENSE](./LICENSE) for details.
