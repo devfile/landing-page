@@ -21,7 +21,7 @@
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
-    "@patternfly/react-core": "^4.181.1",
+    "@patternfly/react-core": "^4.278.1",
     "@patternfly/react-icons": "^4.32.1",
     "@segment/analytics-next": "^1.33.1",
     "@stoplight/json-schema-viewer": "^4.5.0",
