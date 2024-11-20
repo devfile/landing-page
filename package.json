@@ -27,7 +27,7 @@
     "@stoplight/json-schema-viewer": "^4.5.0",
     "@stoplight/markdown-viewer": "^5.3.3",
     "@stoplight/mosaic": "^1.15.2",
-    "@stoplight/mosaic-code-viewer": "^1.15.2",
+    "@stoplight/mosaic-code-viewer": "^1.53.4",
     "@szhsin/react-menu": "^2.3.2",
     "asciidoctor": "^2.2.5",
     "highlight.js": "^11.4.0",
