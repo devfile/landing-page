@@ -19,7 +19,7 @@
     "debug-options": "ttsc ./scripts/debugOptions.ts && node -r esm ./scripts/debugOptions.js"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.2",
+    "@headlessui/react": "^1.7.19",
     "@heroicons/react": "^1.0.5",
     "@patternfly/react-core": "^4.181.1",
     "@patternfly/react-icons": "^4.32.1",
