@@ -2040,10 +2040,10 @@
     "@stoplight/yaml-ast-parser" "0.0.48"
     tslib "^2.2.0"
 
-"@szhsin/react-menu@^2.3.2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@szhsin/react-menu/-/react-menu-2.3.2.tgz#1af1ae015d456c705593b6517fd074abd94dc186"
-  integrity sha512-0sgRhQqf5DQ/NyRPATNtQRfBCPr0oVtGSS67vgV++Pm9VW2N8h2fmaga1hLvun1FrtxxyGhwGfMT1Y9vSRrUag==
+"@szhsin/react-menu@^2.3.4":
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/@szhsin/react-menu/-/react-menu-2.3.4.tgz#304b9bb1692a2a487d7738b608a7cdfd82ef18ec"
+  integrity sha512-RYgrAxAeEjqE62G2r3LFO89uWulJcTZReo5DtUnSkBbGx1aXrl8I7v1p/YUdJSYbimEsRB0qMHiQpQGQmOwDKw==
   dependencies:
     prop-types "^15.7.2"
     react-transition-state "^1.1.3"
