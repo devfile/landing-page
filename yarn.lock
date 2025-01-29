@@ -1175,7 +1175,7 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.36"
 
-"@fortawesome/free-solid-svg-icons@^5.15.2", "@fortawesome/free-solid-svg-icons@^5.15.3":
+"@fortawesome/free-solid-svg-icons@^5.15.3":
   version "5.15.4"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.4.tgz#2a68f3fc3ddda12e52645654142b9e4e8fbb6cc5"
   integrity sha512-JLmQfz6tdtwxoihXLg6lT78BorrFyCf59SAwBM6qV/0zXyVeDygJVb3fk+j5Qat+Yvcxp1buLTY5iDh1ZSAQ8w==
@@ -1858,47 +1858,59 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stoplight/json-schema-merge-allof@^0.7.7":
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/@stoplight/json-schema-merge-allof/-/json-schema-merge-allof-0.7.8.tgz#7efe5e0086dff433eb011f617e82f7295c3de061"
-  integrity sha512-JTDt6GYpCWQSb7+UW1P91IAp/pcLWis0mmEzWVFcLsrNgtUYK7JLtYYz0ZPSR4QVL0fJ0YQejM+MPq5iNDFO4g==
+"@stoplight/json-schema-merge-allof@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@stoplight/json-schema-merge-allof/-/json-schema-merge-allof-0.8.0.tgz#62f8116f59d9df5a910d037b1965decd2efab472"
+  integrity sha512-g8e0s43v96Xbzvd8d6KKUuJTO16CS2oJglJrviUi8ASIUxzFvAJqTHWLtGmpTryisQopqg1evXGJfi0+164+Qw==
   dependencies:
     compute-lcm "^1.1.0"
     json-schema-compare "^0.2.2"
     lodash "^4.17.4"
 
-"@stoplight/json-schema-tree@^2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@stoplight/json-schema-tree/-/json-schema-tree-2.1.3.tgz#ecf6d855779e8c1644b257a41c13aae3c159d6e4"
-  integrity sha512-x9GliJgJ0uyfBng7OffqfHVA7BY4IYk6rZIS7F4oTklAUx1+xv0VQBK6i73AcNs4L7aCuQcwpiHlZuiukpkU2w==
+"@stoplight/json-schema-tree@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@stoplight/json-schema-tree/-/json-schema-tree-4.0.0.tgz#402790a21e076d69c1b8f5dded0bbe158134ab77"
+  integrity sha512-SAGtof+ihIdPqETR+7XXOaqZJcrbSih/xEahaw5t1nXk5sVW6ss2l5A1WCIuvtvnQiUKnBfanmZU4eoM1ZvItg==
   dependencies:
     "@stoplight/json" "^3.12.0"
-    "@stoplight/json-schema-merge-allof" "^0.7.7"
+    "@stoplight/json-schema-merge-allof" "^0.8.0"
     "@stoplight/lifecycle" "^2.3.2"
     "@types/json-schema" "^7.0.7"
     magic-error "0.0.1"
 
-"@stoplight/json-schema-viewer@^4.5.0":
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/@stoplight/json-schema-viewer/-/json-schema-viewer-4.5.0.tgz#0b54e20766e94c2adc8e41f2517a8e9b44b73a78"
-  integrity sha512-YtLL+BqyqfcRUMiFFl2w8501b0A7Ae3/RzoYzaHX+y+q/6nGv0/ViwV6W9q2dvC0QXGMjIL+5YhthKyeJ4Px+A==
+"@stoplight/json-schema-viewer@^4.16.4":
+  version "4.16.4"
+  resolved "https://registry.yarnpkg.com/@stoplight/json-schema-viewer/-/json-schema-viewer-4.16.4.tgz#cc01d7a6ee16bf6946aeb6205cd95b5a5370d42b"
+  integrity sha512-5+2mQIhoFFPzk1Gxb1khrVk2Y5BzEIGcNnY74Ky0mo1ipkSNLBWX5ALU8Kn1rTjVjgO8KHacqR4rw/ZaNhxwhQ==
   dependencies:
-    "@fortawesome/free-solid-svg-icons" "^5.15.2"
-    "@stoplight/json" "^3.17.1"
-    "@stoplight/json-schema-tree" "^2.1.3"
+    "@stoplight/json" "^3.20.1"
+    "@stoplight/json-schema-tree" "^4.0.0"
     "@stoplight/react-error-boundary" "^2.0.0"
     "@types/json-schema" "^7.0.7"
     classnames "^2.2.6"
+    fnv-plus "^1.3.1"
     jotai "^1.4.5"
     lodash "^4.17.19"
 
-"@stoplight/json@^3.12.0", "@stoplight/json@^3.17.1":
+"@stoplight/json@^3.12.0":
   version "3.17.1"
   resolved "https://registry.yarnpkg.com/@stoplight/json/-/json-3.17.1.tgz#17aa8f17c58678649cd0d345fb184e0bea16f8df"
   integrity sha512-OQbjaPU9/VPQYa3zEfN82vjXu3vWv/537Ei7TX/xYLMPdpdBI/mCyThdZAG4SN1t3iho2dxIKpTVObuCTTgBvA==
   dependencies:
     "@stoplight/ordered-object-literal" "^1.0.2"
     "@stoplight/types" "^12.3.0"
+    jsonc-parser "~2.2.1"
+    lodash "^4.17.21"
+    safe-stable-stringify "^1.1"
+
+"@stoplight/json@^3.20.1":
+  version "3.21.7"
+  resolved "https://registry.yarnpkg.com/@stoplight/json/-/json-3.21.7.tgz#102f5fd11921984c96672ce4307850daa1cbfc7b"
+  integrity sha512-xcJXgKFqv/uCEgtGlPxy3tPA+4I+ZI4vAuMJ885+ThkTHFVkC+0Fm58lA9NlsyjnkpxFh4YiQWpH+KefHdbA0A==
+  dependencies:
+    "@stoplight/ordered-object-literal" "^1.0.3"
+    "@stoplight/path" "^1.3.2"
+    "@stoplight/types" "^13.6.0"
     jsonc-parser "~2.2.1"
     lodash "^4.17.21"
     safe-stable-stringify "^1.1"
@@ -2010,6 +2022,16 @@
   resolved "https://registry.yarnpkg.com/@stoplight/ordered-object-literal/-/ordered-object-literal-1.0.2.tgz#2a88a5ebc8b68b54837ac9a9ae7b779cdd862062"
   integrity sha512-0ZMS/9sNU3kVo/6RF3eAv7MK9DY8WLjiVJB/tVyfF2lhr2R4kqh534jZ0PlrFB9CRXrdndzn1DbX6ihKZXft2w==
 
+"@stoplight/ordered-object-literal@^1.0.3":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@stoplight/ordered-object-literal/-/ordered-object-literal-1.0.5.tgz#06689095a4f1a53e9d9a5f0055f707c387af966a"
+  integrity sha512-COTiuCU5bgMUtbIFBuyyh2/yVVzlr5Om0v5utQDgBCuQUOPgU1DwoffkTfg4UBQOvByi5foF4w4T+H9CoRe5wg==
+
+"@stoplight/path@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@stoplight/path/-/path-1.3.2.tgz#96e591496b72fde0f0cdae01a61d64f065bd9ede"
+  integrity sha512-lyIc6JUlUA8Ve5ELywPC8I2Sdnh1zc1zmbYgVarhXIp9YeAB0ReeqmGEOWNtlHkbP2DAA1AL65Wfn2ncjK/jtQ==
+
 "@stoplight/react-error-boundary@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@stoplight/react-error-boundary/-/react-error-boundary-2.0.0.tgz#63a2dcbaced4c77b4a9b6c3fb2be582de1d60236"
@@ -2021,6 +2043,14 @@
   version "12.5.0"
   resolved "https://registry.yarnpkg.com/@stoplight/types/-/types-12.5.0.tgz#ebbeeb8c874de30e4cd9a1a2a6c8d6062c155da0"
   integrity sha512-dwqYcDrGmEyUv5TWrDam5TGOxU72ufyQ7hnOIIDdmW5ezOwZaBFoR5XQ9AsH49w7wgvOqB2Bmo799pJPWnpCbg==
+  dependencies:
+    "@types/json-schema" "^7.0.4"
+    utility-types "^3.10.0"
+
+"@stoplight/types@^13.6.0":
+  version "13.20.0"
+  resolved "https://registry.yarnpkg.com/@stoplight/types/-/types-13.20.0.tgz#d42682f1e3a14a3c60bdf0df08bff4023518763d"
+  integrity sha512-2FNTv05If7ib79VPDA/r9eUet76jewXFH2y2K5vuge6SXbRHtWBhcaRmu+6QpF4/WRNoJj5XYRSwLGXDxysBGA==
   dependencies:
     "@types/json-schema" "^7.0.4"
     utility-types "^3.10.0"
@@ -5232,6 +5262,11 @@ flatted@^3.1.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.2.tgz#64bfed5cb68fe3ca78b3eb214ad97b63bedce561"
   integrity sha512-JaTY/wtrcSyvXJl4IMFHPKyFur1sE9AUqc0QnhOaJ0CxHtAoIV8pYDzeEfAaNEtGkOfq4gr3LBFmdXW5mOQFnA==
+
+fnv-plus@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/fnv-plus/-/fnv-plus-1.3.1.tgz#c34cb4572565434acb08ba257e4044ce2b006d67"
+  integrity sha512-Gz1EvfOneuFfk4yG458dJ3TLJ7gV19q3OM/vVvvHf7eT02Hm1DleB4edsia6ahbKgAYxO9gvyQ1ioWZR+a00Yw==
 
 focus-trap@6.2.2:
   version "6.2.2"

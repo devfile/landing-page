@@ -24,7 +24,7 @@
     "@patternfly/react-core": "^4.181.1",
     "@patternfly/react-icons": "^4.32.1",
     "@segment/analytics-next": "^1.33.1",
-    "@stoplight/json-schema-viewer": "^4.5.0",
+    "@stoplight/json-schema-viewer": "^4.16.4",
     "@stoplight/markdown-viewer": "^5.3.3",
     "@stoplight/mosaic": "^1.15.2",
     "@stoplight/mosaic-code-viewer": "^1.15.2",
