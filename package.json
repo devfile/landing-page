@@ -23,7 +23,7 @@
     "@heroicons/react": "^1.0.5",
     "@patternfly/react-core": "^4.181.1",
     "@patternfly/react-icons": "^4.32.1",
-    "@segment/analytics-next": "^1.33.1",
+    "@segment/analytics-next": "^1.77.0",
     "@stoplight/json-schema-viewer": "^4.5.0",
     "@stoplight/markdown-viewer": "^5.3.3",
     "@stoplight/mosaic": "^1.15.2",
