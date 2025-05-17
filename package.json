@@ -31,7 +31,7 @@
     "@szhsin/react-menu": "^2.3.2",
     "asciidoctor": "^2.2.5",
     "highlight.js": "^11.4.0",
-    "next": "^12.0.7",
+    "next": "^14.2.24",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.8.4",
     "next-transpile-modules": "^9.0.0",
